@@ -11,8 +11,8 @@ window.onload = function() {
 
         // ここから、クマのキャラクターを表示する処理
         bear = new Sprite(32, 32);  // 32x32サイズの Sprite オブジェクトを生成
-        bear.x = 0;                 // Sprite の左上のx座標を指定
-        bear.y = 240;               // Sprite の左上のy座標を指定
+        bear.x = 160;                 // Sprite の左上のx座標を指定
+        bear.y = 380;               // Sprite の左上のy座標を指定
         bear.width = 32;
         bear.height = 32;
 
@@ -21,9 +21,9 @@ window.onload = function() {
         // 「chara1.gif」を32x32の格子で切り取ったのち、0番目(=左上)のものを用いる
         // ゲーム中に frame の値を操作することで、アニメーションを表現できる
 
-        background = new Sprite(320, 320);  // 320x320 サイズの Sprite オブジェクトを生成
-        background.x = background.y = 0;    // Sprite の左上の x, y 座標を指定
-        background.image = game.assets['bg.png'] // bg.png を指定
+        background = new Sprite(320, 480);
+        background.x = background.y = 0;
+        background.image = game.assets['bg.png'];
 
         // タッチしたときにクマを移動させる
         game.rootScene.addEventListener('touchstart', function(e){

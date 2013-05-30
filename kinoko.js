@@ -20,7 +20,7 @@ function addKinoko() {
   var kinoko = new Sprite(16, 16);
   kinoko.type = rand(3);
   kinoko.x = rand(320);
-  kinoko.y = 0;
+  kinoko.y = 100;
   kinoko.image = game.assets['icon0.gif'];
 
   kinoko.frame = 36;
