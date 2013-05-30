@@ -11,7 +11,7 @@ window.onload = function() {
 
         // ここから、クマのキャラクターを表示する処理
         bear = new Sprite(32, 32);  // 32x32サイズの Sprite オブジェクトを生成
-        bear.x = 160;                 // Sprite の左上のx座標を指定
+        bear.x = 144;                 // Sprite の左上のx座標を指定
         bear.y = 380;               // Sprite の左上のy座標を指定
         bear.width = 32;
         bear.height = 32;
