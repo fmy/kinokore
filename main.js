@@ -1,5 +1,22 @@
 enchant();
 
+//=========================================================
+//  定数定義
+//=========================================================
+/*----- 画面 -----*/
+var SCREEN_WIDTH    	= 320;      // 画面の幅
+var SCREEN_HEIGHT   	= 320;      // 画面の高さ
+
+/*----- 背景 -----*/
+var BACKGROUND_WIDTH	= 1320;	    // 背景画像の幅
+var BACKGROUND_HEIGHT	= 320;	    // 背景画像の高さ
+
+/*----- テクスチャ -----*/
+var TEXNAME_PLAYER      = 'chara1.gif'; // プレイヤー
+var TEXNAME_BANANA      = 'icon0.gif';  // バナナアイコン
+var TEXNAME_BACKGROUND  = 'bg.png';     // 背景
+
+
 window.onload = function() {
     game = new Game(320, 480);
     game.fps = 24;
@@ -21,9 +38,29 @@ window.onload = function() {
         // 「chara1.gif」を32x32の格子で切り取ったのち、0番目(=左上)のものを用いる
         // ゲーム中に frame の値を操作することで、アニメーションを表現できる
 
-        background = new Sprite(320, 480);
-        background.x = background.y = 0;
-        background.image = game.assets['bg.png'];
+/*------------------------------ background ------------------------------*/
+
+	// 背景の生成
+        background = new Sprite(BACKGROUND_WIDTH, BACKGROUND_HEIGHT);	// 320x1320 サイズの Sprite オブジェクトを生成
+        background.x = background.y = 0;    				// Sprite の左上の x, y 座標を指定
+        background.image = game.assets[TEXNAME_BACKGROUND] // bg.png を指定
+
+
+		background.onenterframe = function() {
+            // スクロール
+            this.x -= 4;
+
+ 	    // 端まで行ったら戻す
+            if ( this.x <= -( BACKGROUND_WIDTH - SCREEN_WIDTH ) ) {
+                background.moveTo(0, 0);
+            }
+        };
+        
+
+		// シーンへの登録
+		game.rootScene.addChild(background);
+
+/*------------------------------ background ------------------------------*/
 
         // タッチしたときにクマを移動させる
         game.rootScene.addEventListener('touchstart', function(e){
