@@ -9,7 +9,7 @@ var SCREEN_HEIGHT   	= 480;      // 画面の高さ
 
 /*----- 背景 -----*/
 var BACKGROUND_WIDTH	= 1320;	    // 背景画像の幅
-var BACKGROUND_HEIGHT	= 480;	    // 背景画像の高さ
+var BACKGROUND_HEIGHT	= 80;	    // 背景画像の高さ
 
 /*----- テクスチャ -----*/
 var TEXNAME_PLAYER      = 'img/chara1.gif';		// プレイヤー
