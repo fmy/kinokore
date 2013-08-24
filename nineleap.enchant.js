@@ -1,11 +1,11 @@
-enchant.nineleap = { assets: ['start.png', 'end.png'] };
+enchant.nineleap = { assets: ['img/start.png', 'img/end.png'] };
 enchant.nineleap.Game = enchant.Class.create(enchant.Game, {
     initialize: function(width, height) {
         enchant.Game.call(this, width, height);
         this.addEventListener('load', function() {
             var game = this;
             this.startScene = new SplashScene();
-            this.startScene.image = this.assets['start.png'];
+            this.startScene.image = this.assets['img/start.png'];
             this.startScene.addEventListener('touchend', function() {
                 if (game.currentScene == this) game.popScene();
             });
@@ -16,7 +16,7 @@ enchant.nineleap.Game = enchant.Class.create(enchant.Game, {
             this.pushScene(this.startScene);
 
             this.endScene = new SplashScene();
-            this.endScene.image = this.assets['end.png'];
+            this.endScene.image = this.assets['img/end.png'];
         });
     },
     end: function(score, result) {

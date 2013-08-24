@@ -1,3 +1,5 @@
+var KINOKO_SIZE = 16;
+
 var data = [
   {
     img: "img/kinoko0.gif",
@@ -17,11 +19,10 @@ var data = [
 ];
 
 function addKinoko() {
-  var kinoko_size = 16;
-  var kinoko = new Sprite(kinoko_size, kinoko_size);
+  var kinoko = new Sprite(KINOKO_SIZE, KINOKO_SIZE);
   kinoko.type = rand(3);
-  kinoko.x = 80 + rand(160 - kinoko_size);
-  kinoko.y = 100 - kinoko_size;
+  kinoko.x = 80 + rand(160 - KINOKO_SIZE);
+  kinoko.y = 100 - KINOKO_SIZE;
   kinoko.grad = (kinoko.x - 160) / 400;
   kinoko.image = game.assets['img/icon0.gif'];
   kinoko.scaleX = 1.5;
