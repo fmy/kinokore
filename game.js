@@ -14,7 +14,7 @@ function startGameScene() {
     // ゲーム中に frame の値を操作することで、アニメーションを表現できる
 
     // 背景の生成
-    CreateBackground();
+    CreateBackground(scene);
 
     load = new Sprite(SCREEN_WIDTH, 400);
     load.image = game.assets['img/bg-load.png']; // 画像を指定
