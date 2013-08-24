@@ -16,14 +16,11 @@ var TEXNAME_PLAYER      = 'img/chara1.gif';		// プレイヤー
 var TEXNAME_BACKGROUND  = 'img/background.png'; // 背景
 var PLAYER_SIZE         = 32; // プレイヤー
 
-//佐野 - ひとまず置いておく
-var bShowUI = false;
-
 window.onload = function() {
     game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
     game.fps = 24;
     game.preload(['img/chara1.gif','img/icon0.gif','img/background.png','img/bg.png','img/bg-load.png',
-        'img/shiitake.png','img/dokukinoko.png','img/enoki.png','img/matsutake.png', 'img/number.png']);
+        'img/shiitake.png','img/dokukinoko.png','img/enoki.png','img/matsutake.png', 'img/number2.png']);
     //プリロードする画像を相対パスで指定
 
     game.onload = function() {
