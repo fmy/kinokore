@@ -17,6 +17,11 @@ var DATA = [
     score: 5
   },
   {
+    img: "img/bad_matsutake.png",
+    name: "悪いまつたけ",
+    score: -1
+  },
+  {
     img: "img/enoki.png",
     name: "えのき",
     score: 1
@@ -25,7 +30,7 @@ var DATA = [
 
 function addKinoko(scene) {
   var kinoko = new Sprite(KINOKO_SIZE, KINOKO_SIZE);
-  kinoko.type = rand(4);
+  kinoko.type = rand(5);
   kinoko.x = 80 + rand(170 - KINOKO_SIZE);
   kinoko.y = 80 - KINOKO_SIZE*0.75;
   kinoko.grad = (kinoko.x - 160) / 400;

@@ -14,7 +14,7 @@
     // ゲーム中に frame の値を操作することで、アニメーションを表現できる
 
     // 背景の生成	----- 廣山が追加 ----- 
-    CreateBackground();
+    CreateBackground(scene);
 	AddTree( scene );
 
     load = new Sprite(SCREEN_WIDTH, 400);
