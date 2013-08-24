@@ -12,16 +12,15 @@ var BACKGROUND_WIDTH	= 1320;	    // 背景画像の幅
 var BACKGROUND_HEIGHT	= 480;	    // 背景画像の高さ
 
 /*----- テクスチャ -----*/
-var TEXNAME_PLAYER      = 'img/chara1.gif'; // プレイヤー
-var TEXNAME_BANANA      = 'img/icon0.gif';  // バナナアイコン
-var TEXNAME_BACKGROUND  = 'img/bg.png';     // 背景
+var TEXNAME_PLAYER      = 'img/chara1.gif';		// プレイヤー
+var TEXNAME_BACKGROUND  = 'img/background.png'; // 背景
 var PLAYER_SIZE         = 32; // プレイヤー
 
 
 window.onload = function() {
     game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
     game.fps = 24;
-    game.preload(['img/chara1.gif','img/icon0.gif','img/bg.png','img/kinoko1.png','img/bg-load.png']);
+    game.preload(['img/chara1.gif','img/icon0.gif','img/background.png','img/kinoko1.png','img/bg-load.png']);
     //プリロードする画像を相対パスで指定
 
     game.onload = function() {
