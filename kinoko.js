@@ -40,7 +40,7 @@ function addKinoko(scene) {
       case 39:
         if (this.within(bear, 30)) { // bearとの当たり判定
             if (DATA[kinoko.type].score < 0) {
-              game.replaceScene(startGameScene()); // startEndScene()に変える
+              game.replaceScene(startEndScene()); // startEndScene()に変える
             } else {
               scene.removeChild(this); // 画面から消去
               game.score += DATA[kinoko.type].score; // スコアを加算

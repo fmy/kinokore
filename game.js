@@ -47,7 +47,7 @@ function startGameScene() {
             addKinoko(scene);
         }
         if(scene.age > game.fps * 20){
-            game.replaceScene(startGameScene());
+            game.replaceScene(startEndScene());
             // 結果を表示 (スコア, 結果のテキストの順で)
         }
     });
