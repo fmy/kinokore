@@ -27,7 +27,7 @@ function CreateTimer(scene) {
         timer[i].width = 16;
         timer[i].height = 16;
 
-        timer[i].image = game.assets['img/number2.png']; // 画像を指定
+        timer[i].image = game.assets[TEXNAME_NUMBER]; // 画像を指定
         timer[i].frame = i;
 
         scene.addChild(timer[i]);

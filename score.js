@@ -27,7 +27,7 @@ function CreateScore(scene) {
         score[i].width = 16;
         score[i].height = 16;
 
-        score[i].image = game.assets['img/number2.png']; // 画像を指定
+        score[i].image = game.assets[TEXNAME_NUMBER]; // 画像を指定
         score[i].frame = i;
 
         scene.addChild(score[i]);

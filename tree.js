@@ -15,26 +15,21 @@ var TEXNAME_TREE	= 'img/tree.png';
 //=========================================================
 //	木の処理
 //=========================================================
-function AddTree( scene ) {
+function addTree(scene) {
 	// 木を生成
-	var tree = new Sprite( TREE_WIDTH, TREE_HEIGHT );
-	
-	// ランダムで数字を生成
-	var i = rand( 1 );
+	var tree = new Sprite(TREE_WIDTH, TREE_HEIGHT);
 
 	// 木を道の左と右どちらに表示するかを決める
-	if( i = 0 ){	// 左の場合
-		tree.x = rand( 170 - TREE_WIDTH );
+	if(rand(2)){	// 左の場合
+		tree.x = 30;
 	}else{	// 右の場合
-		tree.x = SCREEN_WIDTH - rand( 170 - TREE_WIDTH );
+		tree.x = SCREEN_WIDTH - 30 - TREE_WIDTH;
 	}
 
 	// プロパティを設定
-	tree.y		= 80 - TREE_HEIGHT * 0.75;
+	tree.y		= 80 - TREE_HEIGHT;
 	tree.grad	= ( tree.x - 160 ) / 400;
-	tree.image	= TEXNAME_TREE;
-	tree.scaleX	= 0.5;
-	tree.scaleY	= 0.5;
+	tree.image	= game.assets[TEXNAME_TREE];
 
 	tree.frame = 0;
 
@@ -58,10 +53,9 @@ function AddTree( scene ) {
 				if (game.frame % 4 == 0) {
 					tree.frame += 1;
 				}
-				break;
-
+				break; 
 		}
-	} );
+	});
 
 	// ゲームシーンに登録
 	scene.addChild(tree);

@@ -1,4 +1,8 @@
-﻿function startGameScene() {
+﻿var TEXNAME_ROAD  = 'img/road.png'; // 背景
+var TEXNAME_PLAYER      = 'img/player.png';     // プレイヤー
+var PLAYER_SIZE         = 48; // プレイヤー
+
+function startGameScene() {
     var scene = new Scene();
     var bShowUI = false;
     // ここから、クマのキャラクターを表示する処理
@@ -15,27 +19,30 @@
 
     // 背景の生成	----- 廣山が追加 ----- 
     CreateBackground(scene);
-	AddTree( scene );
 
     load = new Sprite(SCREEN_WIDTH, 400);
-    load.image = game.assets['img/bg-load.png']; // 画像を指定
+    load.image = game.assets[TEXNAME_ROAD]; // 画像を指定
     load.frame = 0;
     load.x = 0;
     load.y = 80;
 
     // タッチしたときにクマを移動させる
     scene.addEventListener('touchstart', function(e){
-        player.x = e.localX - PLAYER_SIZE/2;
+        if (e.localX > PLAYER_SIZE/2 && e.localX < SCREEN_WIDTH - PLAYER_SIZE/2) {
+            player.x = e.localX - PLAYER_SIZE/2;
+        }
     });
 
     // タッチ座標が動いたときにクマを移動させる
     scene.addEventListener('touchmove', function(e){
-        if (e.localX - PLAYER_SIZE/2 > player.x) {
-            player.scaleX = -1;
-        } else {
-            player.scaleX = 1;
+        if (e.localX > PLAYER_SIZE/2 && e.localX < SCREEN_WIDTH - PLAYER_SIZE/2) {
+            if (e.localX - PLAYER_SIZE/2 > player.x) {
+                player.scaleX = -1;
+            } else {
+                player.scaleX = 1;
+            }
+            player.x = e.localX - PLAYER_SIZE/2;
         }
-        player.x = e.localX - PLAYER_SIZE/2;
     });
 
     game.score = 0;
@@ -52,6 +59,9 @@
         if(game.frame % 20 == 0){
             // 6フレームごとにバナナを増やす関数を実行
             addKinoko(scene);
+        }
+        if (game.frame % 10 == 0) {
+            addTree(scene);
         }
         if (game.frame % 12 == 0) {
             player.frame++;

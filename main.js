@@ -6,21 +6,14 @@
 /*----- 画面 -----*/
 var SCREEN_WIDTH    	= 320;      // 画面の幅
 var SCREEN_HEIGHT   	= 480;      // 画面の高さ
-
-/*----- 背景 -----*/
-var BACKGROUND_WIDTH	= 1320;	    // 背景画像の幅
-var BACKGROUND_HEIGHT	= 80;	    // 背景画像の高さ
-
-/*----- テクスチャ -----*/
-var TEXNAME_PLAYER      = 'img/player.png';		// プレイヤー
-var TEXNAME_BACKGROUND  = 'img/background.png'; // 背景
-var PLAYER_SIZE         = 48; // プレイヤー
-
+var TEXNAME_NUMBER      = 'img/number2.png';
+var TEXNAME_START       = 'img/start.png';
+var TEXNAME_END         = 'img/end.png';
 window.onload = function() {
     game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
     game.fps = 24;
-    game.preload([TEXNAME_PLAYER, TEXNAME_BACKGROUND,'img/bg.png','img/bg-load.png',
-        'img/number2.png', 'img/end.png']);
+    game.preload([TEXNAME_PLAYER, TEXNAME_BACKGROUND, TEXNAME_TREE, TEXNAME_ROAD,
+        TEXNAME_NUMBER, TEXNAME_START, TEXNAME_END]);
     for (var i = 0; i < DATA.length; i++) {
         game.preload(DATA[i].img);
     }
@@ -29,7 +22,7 @@ window.onload = function() {
     game.onload = function() {
     // プリロード終了後に呼ばれる関数を指定する
         var scene = new Scene();
-        scene.image = game.assets['img/start.png'];
+        scene.image = game.assets[TEXNAME_START];
         scene.addEventListener('touchend', function() {
             game.replaceScene(startGameScene()); // startEndScene()に変える
         });

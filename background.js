@@ -5,6 +5,10 @@
 //
 //=============================================================================
 
+/*----- 背景 -----*/
+var BACKGROUND_WIDTH	= 1320;	    // 背景画像の幅
+var BACKGROUND_HEIGHT	= 80;	    // 背景画像の高さ
+var TEXNAME_BACKGROUND  = 'img/background.png'; // 背景
 
 //=========================================================
 //	背景生成
@@ -16,7 +20,7 @@ function CreateBackground(scene){
 
 	// プロパティの設定
 	background.x = background.y = 0;					// Sprite の左上の x, y 座標を指定
-	background.image = game.assets[TEXNAME_BACKGROUND]	// bg.png を指定
+	background.image = game.assets[TEXNAME_BACKGROUND]	// background.png を指定
 
 
 	// 背景のスクロール処理
