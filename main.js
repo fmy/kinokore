@@ -12,15 +12,15 @@ var BACKGROUND_WIDTH	= 1320;	    // 背景画像の幅
 var BACKGROUND_HEIGHT	= 320;	    // 背景画像の高さ
 
 /*----- テクスチャ -----*/
-var TEXNAME_PLAYER      = 'chara1.gif'; // プレイヤー
-var TEXNAME_BANANA      = 'icon0.gif';  // バナナアイコン
-var TEXNAME_BACKGROUND  = 'bg.png';     // 背景
+var TEXNAME_PLAYER      = 'img/chara1.gif'; // プレイヤー
+var TEXNAME_BANANA      = 'img/icon0.gif';  // バナナアイコン
+var TEXNAME_BACKGROUND  = 'img/bg.png';     // 背景
 
 
 window.onload = function() {
     game = new Game(320, 480);
     game.fps = 24;
-    game.preload(['chara1.gif','icon0.gif','bg.png']);
+    game.preload(['img/chara1.gif','img/icon0.gif','img/bg.png']);
     //プリロードする画像を相対パスで指定
 
     game.onload = function() {
@@ -33,7 +33,7 @@ window.onload = function() {
         bear.width = 32;
         bear.height = 32;
 
-        bear.image = game.assets['chara1.gif']; // 画像を指定
+        bear.image = game.assets['img/chara1.gif']; // 画像を指定
         bear.frame = 0;
         // 「chara1.gif」を32x32の格子で切り取ったのち、0番目(=左上)のものを用いる
         // ゲーム中に frame の値を操作することで、アニメーションを表現できる
@@ -104,7 +104,7 @@ function addBanana(pos){
     var banana = new Sprite(16, 16);    // Spriteを生成
     banana.x = rand(320);               // 0 から 319 のあいだの乱数
     banana.y = 0;
-    banana.image = game.assets['icon0.gif'];
+    banana.image = game.assets['img/icon0.gif'];
 
     banana.frame = 16;
     // icon0.gif を 16x16 サイズの格子に区切ったとき、左上を 0番目として数えて

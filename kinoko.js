@@ -23,7 +23,7 @@ function addKinoko() {
   kinoko.x = 80 + rand(160 - kinoko_size);
   kinoko.y = 100 - kinoko_size;
   kinoko.grad = (kinoko.x - 160) / 400;
-  kinoko.image = game.assets['icon0.gif'];
+  kinoko.image = game.assets['img/icon0.gif'];
   kinoko.scaleX = 1.5;
   kinoko.scaleY = 1.5;
 
