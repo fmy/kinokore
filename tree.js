@@ -27,8 +27,8 @@ function addTree(scene) {
 	}
 
 	// プロパティを設定
-	tree.y		= 80 - TREE_HEIGHT;
-	tree.grad	= ( tree.x - 160 ) / 400;
+	tree.y		= BACKGROUND_HEIGHT - TREE_HEIGHT;
+	tree.grad	= (tree.x + TREE_WIDTH/2 - SCREEN_WIDTH/2) / (SCREEN_HEIGHT - BACKGROUND_HEIGHT);
 	tree.image	= game.assets[TEXNAME_TREE];
 
 	tree.frame = 0;
@@ -41,8 +41,8 @@ function addTree(scene) {
 
 				// スケールを増加
 				if (game.frame % 4 == 0) {
-					this.scaleX += 0.005;
-					this.scaleY += 0.005;
+					this.scaleX += 0.01;
+					this.scaleY += 0.01;
 				}
 				break;
 

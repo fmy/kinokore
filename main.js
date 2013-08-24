@@ -4,11 +4,13 @@
 //  定数定義
 //=========================================================
 /*----- 画面 -----*/
+var PLAY_TIME           = 30;
 var SCREEN_WIDTH    	= 320;      // 画面の幅
 var SCREEN_HEIGHT   	= 480;      // 画面の高さ
 var TEXNAME_NUMBER      = 'img/number2.png';
 var TEXNAME_START       = 'img/start.png';
 var TEXNAME_END         = 'img/end.png';
+
 window.onload = function() {
     game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
     game.fps = 24;

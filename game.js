@@ -66,7 +66,7 @@ function startGameScene() {
         if (game.frame % 12 == 0) {
             player.frame++;
         }
-        if(scene.age > game.fps * 20){
+        if(scene.age > game.fps * PLAY_TIME){
             game.replaceScene(startEndScene());
             // 結果を表示 (スコア, 結果のテキストの順で)
         }
