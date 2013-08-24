@@ -1,7 +1,7 @@
 enchant();
 
 window.onload = function() {
-    game = new Game(320, 320);
+    game = new Game(320, 480);
     game.fps = 24;
     game.preload(['chara1.gif','icon0.gif','bg.png']);
     //プリロードする画像を相対パスで指定
@@ -40,7 +40,7 @@ window.onload = function() {
         game.rootScene.addEventListener('enterframe',function(){
             if(game.frame % 6 == 0){
                 // 6フレームごとにバナナを増やす関数を実行
-                addBanana();
+                addKinoko();
             }
             if(game.rootScene.age > game.fps * 20){
                 game.end(game.score, game.score + " 本のバナナを取りました!");
