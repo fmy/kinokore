@@ -88,6 +88,12 @@ window.onload = function() {
         game.rootScene.addChild(background);
         game.rootScene.addChild(bear);
 
+        //佐野が追加
+        //タイマー生成
+        CreateTimer();
+        //スコア生成
+        //CreateScore();
+
     }
     game.start();
     // プリロードをスタート
