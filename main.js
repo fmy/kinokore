@@ -21,7 +21,7 @@ window.onload = function() {
     game.fps = 24;
     game.preload([TEXNAME_PLAYER, TEXNAME_BACKGROUND,'img/bg.png','img/bg-load.png',
         'img/shiitake.png','img/dokukinoko.png','img/enoki.png','img/matsutake.png',
-        'img/number2.png']);
+        'img/number2.png', 'img/end.png']);
     //プリロードする画像を相対パスで指定
 
     game.onload = function() {
