@@ -1,4 +1,4 @@
-enchant();
+﻿enchant();
 
 //=========================================================
 //  定数定義
@@ -39,29 +39,8 @@ window.onload = function() {
         // 「chara1.gif」を32x32の格子で切り取ったのち、0番目(=左上)のものを用いる
         // ゲーム中に frame の値を操作することで、アニメーションを表現できる
 
-/*------------------------------ background ------------------------------*/
-
-	// 背景の生成
-        background = new Sprite(BACKGROUND_WIDTH, BACKGROUND_HEIGHT);	// 320x1320 サイズの Sprite オブジェクトを生成
-        background.x = background.y = 0;    				// Sprite の左上の x, y 座標を指定
-        background.image = game.assets[TEXNAME_BACKGROUND] // bg.png を指定
-
-
-		background.onenterframe = function() {
-            // スクロール
-            this.x -= 4;
-
- 	    // 端まで行ったら戻す
-            if ( this.x <= -( BACKGROUND_WIDTH - SCREEN_WIDTH ) ) {
-                background.moveTo(0, 0);
-            }
-        };
-        
-
-		// シーンへの登録
-		game.rootScene.addChild(background);
-
-/*------------------------------ background ------------------------------*/
+		// 背景の生成
+		CreateBackground();
 
         // タッチしたときにクマを移動させる
         game.rootScene.addEventListener('touchstart', function(e){
@@ -86,7 +65,6 @@ window.onload = function() {
             }
         });
 
-        game.rootScene.addChild(background);
         game.rootScene.addChild(bear);
 
         //佐野が追加
