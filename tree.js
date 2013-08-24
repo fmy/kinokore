@@ -15,12 +15,12 @@ var TEXNAME_TREE	= 'img/tree.png';
 //=========================================================
 //	木の処理
 //=========================================================
-function addTree(scene) {
+function addTree(scene, left) {
 	// 木を生成
 	var tree = new Sprite(TREE_WIDTH, TREE_HEIGHT);
 
 	// 木を道の左と右どちらに表示するかを決める
-	if(rand(2)){	// 左の場合
+	if(left){	// 左の場合
 		tree.x = 30;
 	}else{	// 右の場合
 		tree.x = SCREEN_WIDTH - 30 - TREE_WIDTH;

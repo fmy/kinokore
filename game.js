@@ -60,8 +60,11 @@ function startGameScene() {
             // 6フレームごとにバナナを増やす関数を実行
             addKinoko(scene);
         }
-        if (game.frame % 10 == 0) {
-            addTree(scene);
+        if (game.frame % 20 == 0) {
+            addTree(scene, true);
+        }
+        if (game.frame % 20 == 10) {
+            addTree(scene, false);
         }
         if (game.frame % 12 == 0) {
             player.frame++;
