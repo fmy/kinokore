@@ -21,7 +21,8 @@ var PLAYER_SIZE         = 32; // プレイヤー
 window.onload = function() {
     game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
     game.fps = 24;
-    game.preload(['img/chara1.gif','img/icon0.gif','img/bg.png','img/kinoko1.png','img/bg-load.png']);
+    game.preload(['img/chara1.gif','img/icon0.gif','img/bg.png','img/bg-load.png',
+        'img/shiitake.png','img/dokukinoko.png','img/enoki.png','img/matsutake.png']);
     //プリロードする画像を相対パスで指定
 
     game.onload = function() {
@@ -61,7 +62,7 @@ window.onload = function() {
         game.score = 0;
 
         game.rootScene.addEventListener('enterframe',function(){
-            if(game.frame % 6 == 0){
+            if(game.frame % 20 == 0){
                 // 6フレームごとにバナナを増やす関数を実行
                 addKinoko();
             }

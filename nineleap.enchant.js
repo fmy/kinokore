@@ -21,19 +21,6 @@ enchant.nineleap.Game = enchant.Class.create(enchant.Game, {
     },
     end: function(score, result) {
         this.pushScene(this.endScene);
-        if (location.hostname == 'r.jsgames.jp') {
-            var submit = function() {
-                var id = location.pathname.match(/^\/games\/(\d+)/)[1]; 
-                location.replace([
-                    'http://9leap.net/games/', id, '/result',
-                    '?score=', encodeURIComponent(score),
-                    '&result=', encodeURIComponent(result)
-                ].join(''));
-            }
-            this.endScene.addEventListener('touchend', submit);
-            window.setTimeout(submit, 3000);
-        }
-        this.end = function() {};
     }
 });
 
