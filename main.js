@@ -26,7 +26,7 @@ window.onload = function() {
         var scene = new Scene();
         scene.image = game.assets[TEXNAME_START];
         scene.addEventListener('touchend', function() {
-            game.replaceScene(startGameScene()); // startEndScene()に変える
+            game.replaceScene(startGameScene());
         });
         game.replaceScene(scene);
     }

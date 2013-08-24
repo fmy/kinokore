@@ -61,10 +61,10 @@ function startGameScene() {
             addKinoko(scene);
         }
         if (game.frame % 20 == 0) {
-            addTree(scene, true);
+            addTree(scene, true); // 左
         }
         if (game.frame % 20 == 10) {
-            addTree(scene, false);
+            addTree(scene, false); // 右
         }
         if (game.frame % 12 == 0) {
             player.frame++;
