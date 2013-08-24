@@ -56,7 +56,7 @@ function AddTree( scene ) {
 			case 2:
 				// 4フレームに1回フレームを更新
 				if (game.frame % 4 == 0) {
-					kinoko.frame += 1;
+					tree.frame += 1;
 				}
 				break;
 
