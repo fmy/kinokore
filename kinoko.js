@@ -23,9 +23,9 @@ var DATA = [
   }
 ];
 
-function addKinoko() {
+function addKinoko(scene) {
   var kinoko = new Sprite(KINOKO_SIZE, KINOKO_SIZE);
-  kinoko.type = rand(3);
+  kinoko.type = rand(4);
   kinoko.x = 80 + rand(170 - KINOKO_SIZE);
   kinoko.y = 80 - KINOKO_SIZE*0.75;
   kinoko.grad = (kinoko.x - 160) / 400;
@@ -38,19 +38,19 @@ function addKinoko() {
   kinoko.addEventListener('enterframe', function(e) {
     switch (kinoko.frame) {
       case 39:
-        if (this.within(bear, 25)) { // bearとの当たり判定
+        if (this.within(bear, 30)) { // bearとの当たり判定
             if (DATA[kinoko.type].score < 0) {
-              game.end(game.score, game.score + " 本のバナナを取りました!");
+              game.replaceScene(startGameScene()); // startEndScene()に変える
             } else {
-              game.rootScene.removeChild(this); // 画面から消去
+              scene.removeChild(this); // 画面から消去
               game.score += DATA[kinoko.type].score; // スコアを加算
             }
         }else{
             this.y += 4; // y座標を増やす (落下)
             this.x += this.grad * 4;
             if (game.frame % 4 == 0) {
-              this.scaleX += 0.015;
-              this.scaleY += 0.015;
+              this.scaleX += 0.005;
+              this.scaleY += 0.005;
             }
         }
         break;
@@ -63,5 +63,5 @@ function addKinoko() {
         break;
     }
   });
-  game.rootScene.addChild(kinoko);
+  scene.addChild(kinoko);
 }
