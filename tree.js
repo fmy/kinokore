@@ -30,13 +30,32 @@ function AddTree() {
 	}
 
 	// プロパティを設定
-	tree.grad = ( tree.x - 160 ) / 400;
-	tree.image = TEXNAME_TREE;
+	tree.y		= 80 - TREE_HEIGHT * 0.75;
+	tree.grad	= ( tree.x - 160 ) / 400;
+	tree.image	= TEXNAME_TREE;
+	tree.scaleX	= 0.5;
+	tree.scaleY	= 0.5;
 
+	tree.frame = 0;
 
 	tree.addEventListener( 'enterframe', function( e ) {
-		
+		switch( tree.frame ) {
+			case 3:
+				this.y += 4; // y座標を増やす (落下)
+				this.x += this.grad * 4;
+				if (game.frame % 4 == 0) {
+				this.scaleX += 0.005;
+				this.scaleY += 0.005;
+				break;
+
+			case 0:
+			case 1:
+			case 2:
+				break;
+
+		}
 	} );
 }
 
 /* End of File */
+
