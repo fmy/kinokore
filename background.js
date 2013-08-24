@@ -9,7 +9,7 @@
 //=========================================================
 //	背景生成
 //=========================================================
-function CreateBackground(){
+function CreateBackground(scene){
 
 	// 背景の生成
 	background = new Sprite(BACKGROUND_WIDTH, BACKGROUND_HEIGHT);
@@ -31,7 +31,7 @@ function CreateBackground(){
 	};
 
 	// シーンへの登録
-	game.rootScene.addChild(background);
+	scene.addChild(background);
 }
 
 
