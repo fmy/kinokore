@@ -33,12 +33,12 @@ function addKinoko(scene) {
   kinoko.scaleX = 0.5;
   kinoko.scaleY = 0.5;
 
-  kinoko.frame = 36;
+  kinoko.frame = 0;
 
   kinoko.addEventListener('enterframe', function(e) {
     switch (kinoko.frame) {
-      case 39:
-        if (this.within(bear, 30)) { // bearとの当たり判定
+      case 3:
+        if (this.within(player, 30)) { // playerとの当たり判定
             if (DATA[kinoko.type].score < 0) {
               game.replaceScene(startEndScene()); // startEndScene()に変える
             } else {
@@ -54,9 +54,9 @@ function addKinoko(scene) {
             }
         }
         break;
-      case 36:
-      case 37:
-      case 38:
+      case 0:
+      case 1:
+      case 2:
         if (game.frame % 4 == 0) {
           kinoko.frame += 1;
         }
