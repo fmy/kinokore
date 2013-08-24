@@ -17,11 +17,15 @@ var data = [
 ];
 
 function addKinoko() {
-  var kinoko = new Sprite(16, 16);
+  var kinoko_size = 16;
+  var kinoko = new Sprite(kinoko_size, kinoko_size);
   kinoko.type = rand(3);
-  kinoko.x = rand(320);
-  kinoko.y = 100;
+  kinoko.x = 80 + rand(160 - kinoko_size);
+  kinoko.y = 100 - kinoko_size;
+  kinoko.grad = (kinoko.x - 160) / 400;
   kinoko.image = game.assets['icon0.gif'];
+  kinoko.scaleX = 1.5;
+  kinoko.scaleY = 1.5;
 
   kinoko.frame = 36;
 
@@ -33,6 +37,11 @@ function addKinoko() {
             game.score += data[kinoko.type].score; // スコアを加算
         }else{
             this.y += 4; // y座標を増やす (落下)
+            this.x += this.grad * 4;
+            if (game.frame % 4 == 0) {
+              this.scaleX += 0.02;
+              this.scaleY += 0.02;
+            }
         }
         break;
       case 36:
@@ -45,6 +54,4 @@ function addKinoko() {
     }
   });
   game.rootScene.addChild(kinoko);
-  // バナナを画面に追加
-
 }
