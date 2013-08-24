@@ -10,9 +10,42 @@
 
 //定数定義
 var GAME_LIMIT_TIME = 30; // ゲームのリミットタイム
+var TIMER_DIGIT = 2;
 
 //タイマー生成とか更新とか
 function CreateTimer() {
+/*
+    var timer = new Array();
+    var nCntTime = 0;
+
+    for (var i = 0; i < TIMER_DIGIT; i++) {
+
+        timer[i] = new Sprite(20, 40);
+        timer[i].x = 250 + (i * 20);    // Sprite の左上のx座標を指定
+        timer[i].y = 10;               // Sprite の左上のy座標を指定
+        timer[i].width = 20;
+        timer[i].height = 40;
+
+        timer[i].image = game.assets['img/number.png']; // 画像を指定
+        timer[i].frame = i;
+
+        game.rootScene.addChild(timer[i]);
+    }
+
+    timerLabel.addEventListener('enterframe', function (e) {
+        // タイマー更新
+        if (game._activated) {
+            nCntTime++;
+            var time = GAME_LIMIT_TIME - Math.floor(nCntTime / game.fps);
+            for (var i = TIMER_DIGIT - 1; i > 0; i--) {
+
+                timer.frame = time % 10;
+                time /= 10;
+            }
+        }
+    });
+   */
+
     // タイマーラベルを生成, 表示
     var timerLabel = new Label();
     var nCntTime = 0;
