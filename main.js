@@ -16,11 +16,14 @@ var TEXNAME_PLAYER      = 'img/chara1.gif';		// プレイヤー
 var TEXNAME_BACKGROUND  = 'img/background.png'; // 背景
 var PLAYER_SIZE         = 32; // プレイヤー
 
+//佐野 - ひとまず置いておく
+var bShowUI = false;
 
 window.onload = function() {
     game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
     game.fps = 24;
-    game.preload(['img/chara1.gif','img/icon0.gif','img/background.png','img/kinoko1.png','img/bg-load.png']);
+    game.preload(['img/chara1.gif','img/icon0.gif','img/background.png','img/bg.png','img/bg-load.png',
+        'img/shiitake.png','img/dokukinoko.png','img/enoki.png','img/matsutake.png', 'img/number.png']);
     //プリロードする画像を相対パスで指定
 
     game.onload = function() {
@@ -60,7 +63,15 @@ window.onload = function() {
         game.score = 0;
 
         game.rootScene.addEventListener('enterframe',function(){
-            if(game.frame % 6 == 0){
+        if (bShowUI == false && game._activated) {
+                bShowUI = true;
+                //佐野が追加
+                //タイマー生成
+                CreateTimer();
+                //スコア生成
+                CreateScore();
+            }
+            if(game.frame % 20 == 0){
                 // 6フレームごとにバナナを増やす関数を実行
                 addKinoko();
             }
@@ -72,12 +83,6 @@ window.onload = function() {
 
         game.rootScene.addChild(load);
         game.rootScene.addChild(bear);
-
-        //佐野が追加
-        //タイマー生成
-        CreateTimer();
-        //スコア生成
-        //CreateScore();
 
     }
     game.start();

@@ -1,18 +1,23 @@
-var KINOKO_SIZE = 32;
+var KINOKO_SIZE = 64;
 
-var data = [
+var DATA = [
   {
-    img: "img/kinoko0.gif",
-    name: "しめじ",
+    img: "img/shiitake.png",
+    name: "しいたけ",
     score: 2
   },
   {
-    img: "img/kinoko1.gif",
+    img: "img/dokukinoko.png",
     name: "毒キノコ",
     score: -1
   },
   {
-    img: "img/kinoko2.gif",
+    img: "img/matsutake.png",
+    name: "まつたけ",
+    score: 5
+  },
+  {
+    img: "img/enoki.png",
     name: "えのき",
     score: 1
   }
@@ -21,19 +26,25 @@ var data = [
 function addKinoko() {
   var kinoko = new Sprite(KINOKO_SIZE, KINOKO_SIZE);
   kinoko.type = rand(3);
-  kinoko.x = 80 + rand(160 - KINOKO_SIZE);
-  kinoko.y = 80 - KINOKO_SIZE;
+  kinoko.x = 80 + rand(170 - KINOKO_SIZE);
+  kinoko.y = 80 - KINOKO_SIZE*0.75;
   kinoko.grad = (kinoko.x - 160) / 400;
-  kinoko.image = game.assets['img/kinoko1.png'];
+  kinoko.image = game.assets[DATA[kinoko.type].img];
+  kinoko.scaleX = 0.5;
+  kinoko.scaleY = 0.5;
 
   kinoko.frame = 36;
 
   kinoko.addEventListener('enterframe', function(e) {
     switch (kinoko.frame) {
       case 39:
-        if (this.intersect(bear)) { // bearとの当たり判定
-            game.rootScene.removeChild(this); // 画面から消去
-            game.score += data[kinoko.type].score; // スコアを加算
+        if (this.within(bear, 25)) { // bearとの当たり判定
+            if (DATA[kinoko.type].score < 0) {
+              game.end(game.score, game.score + " 本のバナナを取りました!");
+            } else {
+              game.rootScene.removeChild(this); // 画面から消去
+              game.score += DATA[kinoko.type].score; // スコアを加算
+            }
         }else{
             this.y += 4; // y座標を増やす (落下)
             this.x += this.grad * 4;
