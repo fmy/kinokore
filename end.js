@@ -6,5 +6,8 @@ function startEndScene() {
     GameOverImage.height = PLAYER_SIZE + 500;
     GameOverImage.flame = 0;
     scene.addChild(GameOverImage);
+    scene.addEventListener('touchstart', function(e){
+         game.replaceScene(startGameScene());
+    });
     return scene;
 }
