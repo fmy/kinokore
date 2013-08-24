@@ -1,4 +1,4 @@
-var KINOKO_SIZE = 16;
+var KINOKO_SIZE = 32;
 
 var data = [
   {
@@ -22,11 +22,9 @@ function addKinoko() {
   var kinoko = new Sprite(KINOKO_SIZE, KINOKO_SIZE);
   kinoko.type = rand(3);
   kinoko.x = 80 + rand(160 - KINOKO_SIZE);
-  kinoko.y = 100 - KINOKO_SIZE;
+  kinoko.y = 80 - KINOKO_SIZE;
   kinoko.grad = (kinoko.x - 160) / 400;
-  kinoko.image = game.assets['img/icon0.gif'];
-  kinoko.scaleX = 1.5;
-  kinoko.scaleY = 1.5;
+  kinoko.image = game.assets['img/kinoko1.png'];
 
   kinoko.frame = 36;
 
@@ -40,8 +38,8 @@ function addKinoko() {
             this.y += 4; // y座標を増やす (落下)
             this.x += this.grad * 4;
             if (game.frame % 4 == 0) {
-              this.scaleX += 0.02;
-              this.scaleY += 0.02;
+              this.scaleX += 0.015;
+              this.scaleY += 0.015;
             }
         }
         break;

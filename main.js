@@ -21,7 +21,7 @@ var PLAYER_SIZE         = 32; // プレイヤー
 window.onload = function() {
     game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
     game.fps = 24;
-    game.preload(['img/chara1.gif','img/icon0.gif','img/bg.png']);
+    game.preload(['img/chara1.gif','img/icon0.gif','img/bg.png','img/kinoko1.png','img/bg-load.png']);
     //プリロードする画像を相対パスで指定
 
     game.onload = function() {
@@ -41,6 +41,12 @@ window.onload = function() {
 
 		// 背景の生成
 		CreateBackground();
+
+        load = new Sprite(SCREEN_WIDTH, 400);
+        load.image = game.assets['img/bg-load.png']; // 画像を指定
+        load.frame = 0;
+        load.x = 0;
+        load.y = 80;
 
         // タッチしたときにクマを移動させる
         game.rootScene.addEventListener('touchstart', function(e){
@@ -65,6 +71,7 @@ window.onload = function() {
             }
         });
 
+        game.rootScene.addChild(load);
         game.rootScene.addChild(bear);
 
         //佐野が追加
