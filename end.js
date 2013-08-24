@@ -7,7 +7,7 @@ function startEndScene() {
     GameOverImage.flame = 0;
     scene.addChild(GameOverImage);
     scene.addEventListener('touchstart', function(e){
-         game.replaceScene(startGameScene());
+         game.replaceScene(startTitleScene());
     });
     return scene;
 }

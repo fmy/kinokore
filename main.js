@@ -15,7 +15,7 @@ window.onload = function() {
     game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
     game.fps = 24;
     game.preload([TEXNAME_PLAYER, TEXNAME_BACKGROUND, TEXNAME_TREE, TEXNAME_ROAD,
-        TEXNAME_NUMBER, TEXNAME_START, TEXNAME_END]);
+        TEXNAME_NUMBER, TEXNAME_START, TEXNAME_END, TEXNAME_TITLE, TEXNAME_TITLESTRING]);
     for (var i = 0; i < DATA.length; i++) {
         game.preload(DATA[i].img);
     }
@@ -23,12 +23,7 @@ window.onload = function() {
 
     game.onload = function() {
     // プリロード終了後に呼ばれる関数を指定する
-        var scene = new Scene();
-        scene.image = game.assets[TEXNAME_START];
-        scene.addEventListener('touchend', function() {
-            game.replaceScene(startGameScene());
-        });
-        game.replaceScene(scene);
+        game.replaceScene(startTitleScene());
     }
     game.start();
     // プリロードをスタート
