@@ -15,6 +15,7 @@ var GAME_LIMIT_TIME = 30; // ゲームのリミットタイム
 function CreateTimer() {
     // タイマーラベルを生成, 表示
     var timerLabel = new Label();
+    var nCntTime = 0;
     game.rootScene.addChild(timerLabel);
     timerLabel.x = 250;
     timerLabel.y = 10;
@@ -23,14 +24,15 @@ function CreateTimer() {
     timerLabel.font = "11px 'Consolas', 'Monaco', 'ＭＳ ゴシック'";
     timerLabel.text = "Timer : ";
 
-    timerLabel.addEventListener('enterframe', function (e)
-    {
+    timerLabel.addEventListener('enterframe', function (e) {
         // タイマー更新
-        var time = GAME_LIMIT_TIME - Math.floor(game.frame / game.fps);
-        timerLabel.text = "Timer : " + time;
-        if (time < 10)
-        {
-            timerLabel.color = "red";
+        if (game._activated) {
+            nCntTime++;
+            var time = GAME_LIMIT_TIME - Math.floor(nCntTime / game.fps);
+            timerLabel.text = "Timer : " + time;
+            if (time < 10) {
+                timerLabel.color = "red";
+            }
         }
     });
 }

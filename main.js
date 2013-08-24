@@ -93,7 +93,7 @@ window.onload = function() {
         //タイマー生成
         CreateTimer();
         //スコア生成
-        //CreateScore();
+        CreateScore();
 
     }
     game.start();
