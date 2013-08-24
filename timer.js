@@ -13,7 +13,7 @@ var GAME_LIMIT_TIME = 30;   // ゲームのリミットタイム
 var TIMER_DIGIT = 2;        // タイマーの数字の桁数
 
 //タイマー生成とか更新とか
-function CreateTimer() {
+function CreateTimer(scene) {
 
     //変数宣言
     var timer = new Array();    //タイマーの数字の配列
@@ -30,7 +30,7 @@ function CreateTimer() {
         timer[i].image = game.assets['img/number2.png']; // 画像を指定
         timer[i].frame = i;
 
-        game.rootScene.addChild(timer[i]);
+        scene.addChild(timer[i]);
     }
 
     timer[0].addEventListener('enterframe', function (e) {

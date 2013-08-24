@@ -16,9 +16,6 @@ var TEXNAME_PLAYER      = 'img/chara1.gif';		// プレイヤー
 var TEXNAME_BACKGROUND  = 'img/background.png'; // 背景
 var PLAYER_SIZE         = 32; // プレイヤー
 
-//佐野 - ひとまず置いておく
-var bShowUI = false;
-
 window.onload = function() {
     game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
     game.fps = 24;

@@ -1,5 +1,6 @@
 function startGameScene() {
     var scene = new Scene();
+    var bShowUI = false;
     // ここから、クマのキャラクターを表示する処理
     bear = new Sprite(PLAYER_SIZE, PLAYER_SIZE);  // Sprite オブジェクトを生成
     bear.x = (SCREEN_WIDTH - PLAYER_SIZE) / 2;    // Sprite の左上のx座標を指定
@@ -38,9 +39,9 @@ function startGameScene() {
             bShowUI = true;
             //佐野が追加
             //タイマー生成
-            CreateTimer();
+            CreateTimer(scene);
             //スコア生成
-            CreateScore();
+            CreateScore(scene);
         }
         if(game.frame % 20 == 0){
             // 6フレームごとにバナナを増やす関数を実行

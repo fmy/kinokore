@@ -13,7 +13,7 @@ var SCORE_LIMIT = 99999;    // ゲームのリミットタイム
 var SCORE_DIGIT = 5;        // スコアの桁数
 
 //スコア生成とか更新とか
-function CreateScore() {
+function CreateScore(scene) {
 
     //変数宣言
     var score = new Array();    //スコアの数字画像
@@ -30,7 +30,7 @@ function CreateScore() {
         score[i].image = game.assets['img/number2.png']; // 画像を指定
         score[i].frame = i;
 
-        game.rootScene.addChild(score[i]);
+        scene.addChild(score[i]);
     }
 
     //スコア更新
