@@ -1,4 +1,4 @@
-function startGameScene() {
+﻿function startGameScene() {
     var scene = new Scene();
     var bShowUI = false;
     // ここから、クマのキャラクターを表示する処理
@@ -13,8 +13,9 @@ function startGameScene() {
     // 「chara1.gif」を32x32の格子で切り取ったのち、0番目(=左上)のものを用いる
     // ゲーム中に frame の値を操作することで、アニメーションを表現できる
 
-    // 背景の生成
+    // 背景の生成	----- 廣山が追加 ----- 
     CreateBackground();
+	AddTree( scene );
 
     load = new Sprite(SCREEN_WIDTH, 400);
     load.image = game.assets['img/bg-load.png']; // 画像を指定

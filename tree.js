@@ -15,7 +15,7 @@ var TEXNAME_TREE	= 'img/tree.png';
 //=========================================================
 //	木の処理
 //=========================================================
-function AddTree() {
+function AddTree( scene ) {
 	// 木を生成
 	var tree = new Sprite( TREE_WIDTH, TREE_HEIGHT );
 	
@@ -41,20 +41,30 @@ function AddTree() {
 	tree.addEventListener( 'enterframe', function( e ) {
 		switch( tree.frame ) {
 			case 3:
-				this.y += 4; // y座標を増やす (落下)
-				this.x += this.grad * 4;
+				this.y += 4; 				// y座標を増やす (落下)
+				this.x += this.grad * 4;	// x座標を増やす（横に移動）
+
+				// スケールを増加
 				if (game.frame % 4 == 0) {
-				this.scaleX += 0.005;
-				this.scaleY += 0.005;
+					this.scaleX += 0.005;
+					this.scaleY += 0.005;
+				}
 				break;
 
 			case 0:
 			case 1:
 			case 2:
+				// 4フレームに1回フレームを更新
+				if (game.frame % 4 == 0) {
+					kinoko.frame += 1;
+				}
 				break;
 
 		}
 	} );
+
+	// ゲームシーンに登録
+	scene.addChild(tree);
 }
 
 /* End of File */
