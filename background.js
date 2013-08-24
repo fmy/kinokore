@@ -12,24 +12,26 @@
 function CreateBackground(){
 
 	// 背景の生成
-        background = new Sprite(BACKGROUND_WIDTH, BACKGROUND_HEIGHT);	// 320x1320 サイズの Sprite オブジェクトを生成
-        background.x = background.y = 0;    				// Sprite の左上の x, y 座標を指定
-        background.image = game.assets[TEXNAME_BACKGROUND] // bg.png を指定
+	background = new Sprite(BACKGROUND_WIDTH, BACKGROUND_HEIGHT);
+
+	// プロパティの設定
+	background.x = background.y = 0;					// Sprite の左上の x, y 座標を指定
+	background.image = game.assets[TEXNAME_BACKGROUND]	// bg.png を指定
 
 
-		background.onenterframe = function() {
-            // スクロール
-            this.x -= 4;
+	// 背景のスクロール処理
+	background.onenterframe = function() {
+		// スクロール
+		this.x -= 0.5;
 
- 	    // 端まで行ったら戻す
-            if ( this.x <= -( BACKGROUND_WIDTH - SCREEN_WIDTH ) ) {
-                background.moveTo(0, 0);
-            }
-        };
-        
+		// 端まで行ったら戻す
+		if ( this.x <= -( BACKGROUND_WIDTH - SCREEN_WIDTH ) ) {
+			background.moveTo(0, 0);
+		}
+	};
 
-		// シーンへの登録
-		game.rootScene.addChild(background);
+	// シーンへの登録
+	game.rootScene.addChild(background);
 }
 
 
