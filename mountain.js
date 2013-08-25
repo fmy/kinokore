@@ -8,9 +8,10 @@
 //=========================================================
 //	定数定義
 //=========================================================
-var MOUNTAIN_WIDTH		= 1320;
-var MOUNTAIN_HEIGHT		= 60;
-var TEXNAME_MOUNTAIN	= 'img/mountain.png';
+var MOUNTAIN_WIDTH			= 1320;					// 山の幅
+var MOUNTAIN_HEIGHT			= 60;					// 山の高さ
+var MOUNTAIN_SCROLLSPEED	= 0.3;					// 山のスクロールスピード
+var TEXNAME_MOUNTAIN		= 'img/mountain.png';	// テクスチャ
 
 //=========================================================
 // 山の処理
@@ -27,7 +28,7 @@ function CreateMountain( scene ) {
 	// 山のスクロール処理
 	mountain.onenterframe = function() {
 		// スクロール
-		this.x -= 0.5;
+		this.x -= MOUNTAIN_SCROLLSPEED;
 
 		// 端まで行ったら戻す
 		if ( this.x <= -( MOUNTAIN_WIDTH - SCREEN_WIDTH ) ) {

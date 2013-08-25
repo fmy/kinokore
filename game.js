@@ -19,6 +19,7 @@ function startGameScene() {
     // 背景の生成	----- 廣山が追加 ----- 
 	CreateField( scene );
     CreateBackground( scene );
+	CreateMountain( scene );
 
     // タッチしたときにクマを移動させる
     scene.addEventListener('touchstart', function(e){
@@ -75,6 +76,7 @@ function startGameScene() {
         if (game.frame % 30 == 15) {
             addTree(scene, false); // 右
         }
+		// 25フレームごとに石を生成　廣山が追加
 		if( game.frame % 25 == 0 ) {
 			AddStone( scene );
 		}
