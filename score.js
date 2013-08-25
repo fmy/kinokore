@@ -1,4 +1,4 @@
-//===============================================================================
+﻿//===============================================================================
 // File
 //	ファイル名	：score.js
 //	内容		：スコア処理
@@ -11,9 +11,21 @@
 //定数定義
 var SCORE_LIMIT = 99999;    // ゲームのリミットタイム
 var SCORE_DIGIT = 5;        // スコアの桁数
+var TEXNAME_SCORE = 'img/score.png'
 
 //スコア生成とか更新とか
 function CreateScore(scene) {
+
+    var scoreLogo = new Sprite(80, 16);
+    scoreLogo.x = 20;    // Sprite の左上のx座標を指定
+    scoreLogo.y = 10;               // Sprite の左上のy座標を指定
+    scoreLogo.width = 80;
+    scoreLogo.height = 16;
+    scoreLogo.scaleX = 1.5;
+    scoreLogo.scaleY = 1.5;
+    scoreLogo.image = game.assets[TEXNAME_SCORE]; // 画像を指定
+
+    scene.addChild(scoreLogo);
 
     //変数宣言
     var score = new Array();    //スコアの数字画像
@@ -23,7 +35,7 @@ function CreateScore(scene) {
 
         score[i] = new Sprite(16, 16);
         score[i].x = 10 + (i * 32);   
-        score[i].y = 10;             
+        score[i].y = 40;             
         score[i].width = 16;
         score[i].height = 16;
         score[i].scaleX = 2.0;

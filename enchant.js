@@ -1,4 +1,4 @@
-/**
+﻿/**
 * enchant.js v0.7.0
 * http://enchantjs.com
 *
@@ -2658,7 +2658,7 @@ enchant.EventTarget = enchant.Class.create({
          [lang:de]
          * Entbindet eine Taste.
          *
-         * @param {Number} key Der Tastencode der entfernt werden soll.
+         * @param {Number} key Der Tastencodeder entfernt werden soll.
          [/lang]
          * @return {enchant.Core} this
          */
@@ -7730,11 +7730,11 @@ enchant.Timeline = enchant.Class.create(enchant.EventTarget, {
      * Class for managing the action.
      * For one node to manipulate the timeline of one must correspond.
      *
-          * Reading a tl.enchant.js, all classes (Group, Scene, Entity, Label, Sprite) of the Node class that inherits
-          * Tlthe property, an instance of the Timeline class is generated.
-          * Time-line class has a method to add a variety of actions to himself,
-          * entities can be animated and various operations by using these briefly.
-          * You can choose time based and frame based(default) animation.
+      * Reading a tl.enchant.js, all classes (Group, Scene, Entity, Label, Sprite) of the Node class that inherits
+      * Tlthe property, an instance of the Timeline class is generated.
+      * Time-line class has a method to add a variety of actions to himself,
+      * entities can be animated and various operations by using these briefly.
+      * You can choose time based and frame based(default) animation.
      *
      * @param node target node
      * @param [unitialized] if this param is true, when add method called in the first time,
@@ -8406,14 +8406,14 @@ enchant.Action = enchant.Class.create(enchant.ActionEventTarget, {
      [/lang]
      [lang:en]
      * Action class.
-     * Actions are units that make up the time line,
-     * It is a unit used to specify the action you want to perform.
-     * Action has been added to the time line is performed in order.
-     *
-     * Actionstart, actiontick event is fired when the action is started and stopped,
-     * When one frame has elapsed actiontick event is also issued.
-     * Specify the action you want to perform as a listener for these events.
-     * The transition to the next action automatically the number of frames that are specified in the time has elapsed.
+* Actions are units that make up the time line,
+ * It is a unit used to specify the action you want to perform.
+ * Action has been added to the time line is performed in order.
+ *
+* Actionstart, actiontick event is fired when the action is started and stopped,
+ * When one frame has elapsed actiontick event is also issued.
+ * Specify the action you want to perform as a listener for these events.
+  * The transition to the next action automatically the number of frames that are specified in the time has elapsed.
      *
      * @constructs
      * @param param

@@ -1,4 +1,4 @@
-var KINOKO_SIZE = 32;
+﻿var KINOKO_SIZE = 32;
 var TEXNAME_DAMAGE = 'img/effect0.png';
 var DAMAGE_SIZE = 16;
 
