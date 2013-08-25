@@ -1,5 +1,4 @@
-﻿var TEXNAME_ROAD  = 'img/road.png'; // 背景
-var TEXNAME_PLAYER      = 'img/player.png';     // プレイヤー
+﻿var TEXNAME_PLAYER      = 'img/player.png';     // プレイヤー
 var PLAYER_SIZE         = 48; // プレイヤー
 
 function startGameScene() {
@@ -78,9 +77,9 @@ function startGameScene() {
             addTree(scene, false); // 右
         }
 		if( game.frame % 25 == 0 ) {
-			// AddStone( scene );
+			AddStone( scene );
 		}
-        if (game.frame % 12 == 0) {
+        if (game.frame % 4 == 0) {
             player.frame++;
         }
         if(scene.age > game.fps * PLAY_TIME){
