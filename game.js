@@ -21,12 +21,6 @@ function startGameScene() {
 	CreateField( scene );
     CreateBackground( scene );
 
-    load = new Sprite(SCREEN_WIDTH, SCREEN_HEIGHT - BACKGROUND_HEIGHT);
-    load.image = game.assets[TEXNAME_ROAD]; // 画像を指定
-    load.frame = 0;
-    load.x = 0;
-    load.y = BACKGROUND_HEIGHT;
-
     // タッチしたときにクマを移動させる
     scene.addEventListener('touchstart', function(e){
         if (e.localX > PLAYER_SIZE/2 && e.localX < SCREEN_WIDTH - PLAYER_SIZE/2) {
@@ -76,7 +70,6 @@ function startGameScene() {
         }
     });
 
-    //scene.addChild(load);
     scene.addChild(player);
 
     return scene;
