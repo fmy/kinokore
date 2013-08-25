@@ -12,14 +12,14 @@ var TEXNAME_RECIPE_1 = 'img/recipe1.jpg' ;
 var RECIPE_1_SIZE_X = 256;
 var RECIPE_1_SIZE_Y = 144;
 var RECIPE_1_NAME = "焼き松茸"
-var RECIPE_1_DIS = "焼いて食べると美味しい"
+var RECIPE_1_DIS = "松茸の調理方法といえばこれ！調理方法は焼くだけのシンプルなものだが，素材本来の味と香りを楽しめる！　これぞ究極の贅沢"
 
 
 var TEXNAME_RECIPE_2 = 'img/recipe2.jpg';
 var RECIPE_2_SIZE_X = 256;
 var RECIPE_2_SIZE_Y = 144;
 var RECIPE_2_NAME = "えのきのベーコン巻き"
-var RECIPE_2_DIS = "安くてうまい"
+var RECIPE_2_DIS = "えのきにベーコンを巻いて焼区だけで手間要らず！　細いえのきにベーコンの肉汁がよく絡む！　是非とも日本酒と一緒に行きたい一品"
 
 
 var TEXNAME_FLAME = 'img/end.png';
@@ -109,7 +109,7 @@ OsusumeString.font = "24px Tahoma";
     var detail = new Label("焼く\n食べる");
             detail.text = recipedis;
             detail.x = 10;
-            detail.y = 390;
+            detail.y = 350;
             scene.addChild(detail);
     
     scene.addEventListener('touchstart', function(e){
