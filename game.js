@@ -13,7 +13,6 @@ function startGameScene() {
 
     player.image = game.assets[TEXNAME_PLAYER]; // 画像を指定
     player.frame = 0;
-
     // 「chara1.gif」を32x32の格子で切り取ったのち、0番目(=左上)のものを用いる
     // ゲーム中に frame の値を操作することで、アニメーションを表現できる
 
@@ -95,8 +94,6 @@ function startGameScene() {
     });
 
     scene.addChild(player);
-
-    SetEffectDash(scene); //走るエフェクト設定
 
     return scene;
 }

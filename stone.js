@@ -36,7 +36,6 @@ function AddStone( scene ) {
 		if ( game.frame % 4 == 0 ) {
 			this.scaleX += 0.0125;
 			this.scaleY += 0.0125;
-
 		}
 	});
 
