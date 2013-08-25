@@ -30,9 +30,14 @@ function SetEffectPoint(scene, posX, posY, point) {
         number.scaleX = 0.8;
         number.scaleY = 1.0;
 
-        number.image = game.assets['img/number2.png']; // ‰æ‘œ‚ðŽw’è
+        number.image = game.assets[TEXNAME_NUMBER]; // ‰æ‘œ‚ðŽw’è
         //”Žš‚ðŠ„‚è“–‚Ä
         number.frame = workPoint % 10;
+        if (point >= 500) {
+            number.frame += 10;
+            number.scaleX += 0.2;
+            number.scaleY += 0.2;
+        }
         workPoint /= 10;
         console.log(number.frame);
 

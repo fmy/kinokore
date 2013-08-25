@@ -1,4 +1,4 @@
-enchant();
+﻿enchant();
 
 //=========================================================
 //  定数定義
@@ -7,7 +7,7 @@ enchant();
 var PLAY_TIME           = 30;
 var SCREEN_WIDTH    	= 320;      // 画面の幅
 var SCREEN_HEIGHT   	= 480;      // 画面の高さ
-var TEXNAME_NUMBER      = 'img/number2.png';
+var TEXNAME_NUMBER      = 'img/number3.png';
 var TEXNAME_START       = 'img/start.png';
 var TEXNAME_END         = 'img/end.png';
 var SOUND_GET           = 'sound/get.wav';
@@ -20,7 +20,7 @@ window.onload = function() {
     game.preload([TEXNAME_PLAYER, TEXNAME_BACKGROUND, TEXNAME_TREE, TEXNAME_ROAD,
         TEXNAME_NUMBER, TEXNAME_START, TEXNAME_END, TEXNAME_TITLE, TEXNAME_TITLESTRING,
         TEXNAME_RESULT, TEXNAME_RECIPE_1, TEXNAME_RECIPE_2,TEXNAME_FLAME,
-        TEXNAME_DAMAGE, TEXNAME_BENITENGU]);
+        TEXNAME_DAMAGE, TEXNAME_BENITENGU, TEXNAME_EFFECTDASH]);
     game.preload([SOUND_GET, SOUND_END]);
     for (var i = 0; i < DATA.length; i++) {
         game.preload(DATA[i].img);
