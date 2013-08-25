@@ -1,35 +1,48 @@
+﻿var TEXNAME_ROAD  = 'img/road.png'; // 背景
+var TEXNAME_PLAYER      = 'img/player.png';     // プレイヤー
+var PLAYER_SIZE         = 48; // プレイヤー
+
 function startGameScene() {
     var scene = new Scene();
     var bShowUI = false;
     // ここから、クマのキャラクターを表示する処理
-    bear = new Sprite(PLAYER_SIZE, PLAYER_SIZE);  // Sprite オブジェクトを生成
-    bear.x = (SCREEN_WIDTH - PLAYER_SIZE) / 2;    // Sprite の左上のx座標を指定
-    bear.y = 380;               // Sprite の左上のy座標を指定
-    bear.width = PLAYER_SIZE;
-    bear.height = PLAYER_SIZE;
+    player = new Sprite(PLAYER_SIZE, PLAYER_SIZE);  // Sprite オブジェクトを生成
+    player.x = (SCREEN_WIDTH - PLAYER_SIZE) / 2;    // Sprite の左上のx座標を指定
+    player.y = 380;               // Sprite の左上のy座標を指定
+    player.width = PLAYER_SIZE;
+    player.height = PLAYER_SIZE;
 
-    bear.image = game.assets['img/chara1.gif']; // 画像を指定
-    bear.frame = 0;
+    player.image = game.assets[TEXNAME_PLAYER]; // 画像を指定
+    player.frame = 0;
     // 「chara1.gif」を32x32の格子で切り取ったのち、0番目(=左上)のものを用いる
     // ゲーム中に frame の値を操作することで、アニメーションを表現できる
 
-    // 背景の生成
-    CreateBackground();
+    // 背景の生成	----- 廣山が追加 ----- 
+    CreateBackground(scene);
 
     load = new Sprite(SCREEN_WIDTH, 400);
-    load.image = game.assets['img/bg-load.png']; // 画像を指定
+    load.image = game.assets[TEXNAME_ROAD]; // 画像を指定
     load.frame = 0;
     load.x = 0;
     load.y = 80;
 
     // タッチしたときにクマを移動させる
     scene.addEventListener('touchstart', function(e){
-        bear.x = e.localX - PLAYER_SIZE/2;
+        if (e.localX > PLAYER_SIZE/2 && e.localX < SCREEN_WIDTH - PLAYER_SIZE/2) {
+            player.x = e.localX - PLAYER_SIZE/2;
+        }
     });
 
     // タッチ座標が動いたときにクマを移動させる
     scene.addEventListener('touchmove', function(e){
-        bear.x = e.localX - PLAYER_SIZE/2;
+        if (e.localX > PLAYER_SIZE/2 && e.localX < SCREEN_WIDTH - PLAYER_SIZE/2) {
+            if (e.localX - PLAYER_SIZE/2 > player.x) {
+                player.scaleX = -1;
+            } else {
+                player.scaleX = 1;
+            }
+            player.x = e.localX - PLAYER_SIZE/2;
+        }
     });
 
     game.score = 0;
@@ -47,14 +60,23 @@ function startGameScene() {
             // 6フレームごとにバナナを増やす関数を実行
             addKinoko(scene);
         }
-        if(scene.age > game.fps * 20){
-            game.replaceScene(startGameScene());
+        if (game.frame % 20 == 0) {
+            addTree(scene, true); // 左
+        }
+        if (game.frame % 20 == 10) {
+            addTree(scene, false); // 右
+        }
+        if (game.frame % 12 == 0) {
+            player.frame++;
+        }
+        if(scene.age > game.fps * PLAY_TIME){
+            game.replaceScene(startEndScene());
             // 結果を表示 (スコア, 結果のテキストの順で)
         }
     });
 
     scene.addChild(load);
-    scene.addChild(bear);
+    scene.addChild(player);
 
     return scene;
 }

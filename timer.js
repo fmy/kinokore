@@ -9,7 +9,6 @@
 //===============================================================================//
 
 //定数定義
-var GAME_LIMIT_TIME = 30;   // ゲームのリミットタイム
 var TIMER_DIGIT = 2;        // タイマーの数字の桁数
 
 //タイマー生成とか更新とか
@@ -29,7 +28,7 @@ function CreateTimer(scene) {
         timer[i].scaleX = 2.0;
         timer[i].scaleY = 2.0;
 
-        timer[i].image = game.assets['img/number2.png']; // 画像を指定
+        timer[i].image = game.assets[TEXNAME_NUMBER]; // 画像を指定
         timer[i].frame = i;
 
         scene.addChild(timer[i]);
@@ -39,38 +38,13 @@ function CreateTimer(scene) {
         // タイマー更新
         if (game._activated) {
             nCntTime++;
-            var time = GAME_LIMIT_TIME - Math.floor(nCntTime / game.fps);
+            var time = PLAY_TIME - Math.floor(nCntTime / game.fps);
             for (var i = TIMER_DIGIT - 1; i >= 0; i--) {
                 timer[i].frame = time % 10;
                 time /= 10;
             }
         }
     });
-
-   /* --- 以前のテキスト表示のタイマー ---
-    // タイマーラベルを生成, 表示
-    var timerLabel = new Label();
-    var nCntTime = 0;
-    game.rootScene.addChild(timerLabel);
-    timerLabel.x = 250;
-    timerLabel.y = 10;
-//    timerLabel.moveTo(250, 10);
-    timerLabel.color = "white";
-    timerLabel.font = "11px 'Consolas', 'Monaco', 'ＭＳ ゴシック'";
-    timerLabel.text = "Timer : ";
-
-    timerLabel.addEventListener('enterframe', function (e) {
-        // タイマー更新
-        if (game._activated) {
-            nCntTime++;
-            var time = GAME_LIMIT_TIME - Math.floor(nCntTime / game.fps);
-            timerLabel.text = "Timer : " + time;
-            if (time < 10) {
-                timerLabel.color = "red";
-            }
-        }
-    });
-    */
 }
 
 //End of File...
