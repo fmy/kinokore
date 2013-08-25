@@ -73,8 +73,8 @@ function addKinoko(scene) {
             this.y += 4; // y座標を増やす (落下)
             this.x += this.grad * 4;
             if (game.frame % 4 == 0) {
-              this.scaleX += 0.01;
-              this.scaleY += 0.01;
+              this.scaleX += 0.0125;
+              this.scaleY += 0.0125;
             }
         }
         break;

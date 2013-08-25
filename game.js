@@ -20,11 +20,11 @@ function startGameScene() {
     // 背景の生成	----- 廣山が追加 ----- 
     CreateBackground(scene);
 
-    load = new Sprite(SCREEN_WIDTH, 400);
+    load = new Sprite(SCREEN_WIDTH, SCREEN_HEIGHT - BACKGROUND_HEIGHT);
     load.image = game.assets[TEXNAME_ROAD]; // 画像を指定
     load.frame = 0;
     load.x = 0;
-    load.y = 80;
+    load.y = BACKGROUND_HEIGHT;
 
     // タッチしたときにクマを移動させる
     scene.addEventListener('touchstart', function(e){

@@ -41,8 +41,8 @@ function addTree(scene, left) {
 
 				// スケールを増加
 				if (game.frame % 4 == 0) {
-					this.scaleX += 0.01;
-					this.scaleY += 0.01;
+					this.scaleX += 0.0125;
+					this.scaleY += 0.0125;
 				}
 				break;
 
