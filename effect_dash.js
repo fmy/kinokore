@@ -1,17 +1,5 @@
-//===============================================================================
-// File
-//	ƒtƒ@ƒCƒ‹–¼	Feffect_dash.js
-//	“à—e		FƒvƒŒƒCƒ„[‚ª‘–‚éƒGƒtƒFƒNƒgˆ—
-//
-// Author
-//	Š‘®	    FHAL“Œ‹ƒQ[ƒ€§ìŠw‰È
-//	–¼‘O@@@@F²–ì–ŠÆ
-//===============================================================================//
+ï»¿var TEXNAME_EFFECTDASH = 'img/dash.png'
 
-//’è”’è‹`
-var TEXNAME_EFFECTDASH = 'img/dash.png'
-
-//ƒGƒtƒFƒNƒg¶¬‚Æ‚©XV‚Æ‚©
 function SetEffectDash(scene) {
 
     var dash = new Sprite(80, 80);
@@ -23,14 +11,12 @@ function SetEffectDash(scene) {
     dash.scaleX = 0.5;
     dash.scaleY = 0.5;
 
-    dash.image = game.assets[TEXNAME_EFFECTDASH]; // ‰æ‘œ‚ğw’è
+    dash.image = game.assets[TEXNAME_EFFECTDASH]; // ç”»åƒã‚’æŒ‡å®š
     dash.frame = 0;
 
     scene.addChild(dash);
 
-    //XV
     dash.addEventListener('enterframe', function (e) {
-        //ˆÊ’uXV‚ÆƒXƒP[ƒ‹‚©ƒAƒ‹ƒtƒ@XV
         this.y += 6;
         this.scaleX -= 0.05;
         this.scaleY -= 0.05;

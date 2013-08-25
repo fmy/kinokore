@@ -1,25 +1,11 @@
-//===============================================================================
-// File
-//	ƒtƒ@ƒCƒ‹–¼	Feffect_getPoint.js
-//	“à—e		F“¾“_ƒQƒbƒg‚ÌƒGƒtƒFƒNƒgˆ—
-//
-// Author
-//	Š‘®	    FHAL“Œ‹ƒQ[ƒ€§ìŠw‰È
-//	–¼‘O@@@@F²–ì–ŠÆ
-//===============================================================================//
-
-//’è”’è‹`
-var POINT_DIGHT = 3;
+ï»¿var POINT_DIGHT = 3;
 var NUMBER_WIDTH = 16;
 var NUMBER_HEIGHT = 16;
 
-//ƒGƒtƒFƒNƒg¶¬‚Æ‚©XV‚Æ‚©
 function SetEffectPoint(scene, posX, posY, point) {
 
-    //•Ï”éŒ¾
     var workPoint = point;
 
-    //Še”š‚Ì¶¬
     for (var i = 0; i < POINT_DIGHT; i++) {
 
         var number = new Sprite(16, 16);
@@ -30,8 +16,7 @@ function SetEffectPoint(scene, posX, posY, point) {
         number.scaleX = 0.8;
         number.scaleY = 1.0;
 
-        number.image = game.assets[TEXNAME_NUMBER]; // ‰æ‘œ‚ğw’è
-        //”š‚ğŠ„‚è“–‚Ä
+        number.image = game.assets[TEXNAME_NUMBER];
         number.frame = workPoint % 10;
         if (point >= 500) {
             number.frame += 10;
@@ -43,9 +28,7 @@ function SetEffectPoint(scene, posX, posY, point) {
 
         scene.addChild(number);
 
-        //XV
         number.addEventListener('enterframe', function (e) {
-            //ˆÊ’uXV‚ÆƒXƒP[ƒ‹‚©ƒAƒ‹ƒtƒ@XV
             this.y -= 5;
             if (this.y <= 300) {
                 scene.removeChild(this);

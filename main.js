@@ -10,8 +10,8 @@ var SCREEN_HEIGHT   	= 480;      // 画面の高さ
 var TEXNAME_NUMBER      = 'img/number3.png';
 var TEXNAME_START       = 'img/start.png';
 var TEXNAME_END         = 'img/end.png';
-var SOUND_GET           = 'sound/get.wav';
-var SOUND_END           = 'sound/gameover.wav';
+var SOUND_GET           = 'sound/get.mp3';
+var SOUND_END           = 'sound/gameover.mp3';
 
 window.onload = function() {
     game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
