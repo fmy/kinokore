@@ -78,7 +78,7 @@ function startGameScene() {
             addTree(scene, false); // 右
         }
 		if( game.frame % 25 == 0 ) {
-			// AddStone( scene );
+			AddStone( scene );
 		}
         if (game.frame % 12 == 0) {
             player.frame++;
