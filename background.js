@@ -28,7 +28,7 @@ function CreateBackground( scene ) {
 	// 背景のスクロール処理
 	background.onenterframe = function() {
 		// スクロール
-		this.x -= 0.5;
+		this.x -= 0.25;
 
 		// 端まで行ったら戻す
 		if ( this.x <= -( BACKGROUND_WIDTH - SCREEN_WIDTH ) ) {
