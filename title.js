@@ -9,8 +9,8 @@ var TITLE_SIZE = 300;
 var TITLE_SIZE = 300;
 
 var TEXNAME_TITLESTRING = 'img/title_string.png';
-var TITLESTRING_SIZE_X = 225;
-var TITLESTRING_SIZE_Y = 40;
+var TITLESTRING_SIZE_X = 143;
+var TITLESTRING_SIZE_Y = 50;
 //----------------------------------------------//
 //
 //起動後すぐに呼ばれるシーン
@@ -23,8 +23,6 @@ function startTitleScene() {
 //メインのタイトル画像定義部分
     var TitleGraph = new Sprite(TITLE_SIZE,TITLE_SIZE);
     TitleGraph.image     =   game.assets[TEXNAME_LOGO];
-    TitleGraph.width     =   TITLE_SIZE;
-    TitleGraph.height    =   TITLE_SIZE;
     TitleGraph.x         =   (SCREEN_WIDTH - TITLE_SIZE)/2;
     TitleGraph.y         =   (SCREEN_WIDTH - TITLE_SIZE)/2;
     TitleGraph.flame     =   0;
@@ -33,11 +31,10 @@ function startTitleScene() {
 //押したらスタートするよ的な文字の定義部分
     var TitleStringGraph    = new Sprite(TITLESTRING_SIZE_X,TITLESTRING_SIZE_Y);
     TitleStringGraph.image  = game.assets[TEXNAME_TITLESTRING];
-    TitleStringGraph.width  = TITLESTRING_SIZE_X;
-    TitleStringGraph.height = TITLESTRING_SIZE_Y;
     TitleStringGraph.x      = (SCREEN_WIDTH - TITLESTRING_SIZE_X)/2;
     TitleStringGraph.y      = 360;
-    TitleStringGraph.flame  = 0;
+    TitleStringGraph.scaleX = 1.5;
+    TitleStringGraph.scaleY = 1.5;
     
     scene.addChild(TitleGraph);
     scene.addChild(TitleStringGraph);
