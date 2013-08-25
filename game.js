@@ -79,7 +79,7 @@ function startGameScene() {
 		if( game.frame % 25 == 0 ) {
 			AddStone( scene );
 		}
-        if (game.frame % 12 == 0) {
+        if (game.frame % 4 == 0) {
             player.frame++;
         }
         if(scene.age > game.fps * PLAY_TIME){
