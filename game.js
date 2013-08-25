@@ -102,6 +102,6 @@ function startGameScene() {
     });
 
     scene.addChild(player);
-    SetEffectDash(scene);
+    var dash = SetEffectDash(scene);
     return scene;
 }
