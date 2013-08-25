@@ -7,7 +7,7 @@ var DATA = [
   {
     img: "img/shiitake.png",
     name: "しいたけ",
-    score: 2
+    score: 200
   },
   {
     img: "img/dokukinoko.png",
@@ -17,7 +17,7 @@ var DATA = [
   {
     img: "img/matsutake.png",
     name: "まつたけ",
-    score: 5
+    score: 500
   },
   {
     img: "img/bad_matsutake.png",
@@ -27,7 +27,7 @@ var DATA = [
   {
     img: "img/enoki.png",
     name: "えのき",
-    score: 1
+    score: 100
   }
 ];
 
@@ -65,7 +65,7 @@ function addKinoko(scene) {
               }, 100);
               // game.replaceScene(startEndScene());
             } else {
-              SetEffectPoint(scene, kinoko.x + 16, kinoko.y + 30, 100); //エフェクト設定
+              SetEffectPoint(scene, kinoko.x + 16, kinoko.y + 30, DATA[kinoko.type].score); //エフェクト設定
               scene.removeChild(this); // 画面から消去
               game.score += DATA[kinoko.type].score; // スコアを加算
             }
