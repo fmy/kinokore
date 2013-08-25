@@ -35,33 +35,34 @@ function addKinoko(scene) {
 
   kinoko.frame = 36;
 
-  kinoko.addEventListener('enterframe', function(e) {
-    switch (kinoko.frame) {
-      case 39:
-        if (this.within(bear, 30)) { // bearとの当たり判定
-            if (DATA[kinoko.type].score < 0) {
-              game.replaceScene(startGameScene()); // startEndScene()に変える
-            } else {
-              scene.removeChild(this); // 画面から消去
-              game.score += DATA[kinoko.type].score; // スコアを加算
-            }
-        }else{
-            this.y += 4; // y座標を増やす (落下)
-            this.x += this.grad * 4;
-            if (game.frame % 4 == 0) {
-              this.scaleX += 0.005;
-              this.scaleY += 0.005;
-            }
-        }
-        break;
-      case 36:
-      case 37:
-      case 38:
-        if (game.frame % 4 == 0) {
-          kinoko.frame += 1;
-        }
-        break;
-    }
+  kinoko.addEventListener('enterframe', function (e) {
+      switch (kinoko.frame) {
+          case 39:
+              if (this.within(bear, 30)) { // bearとの当たり判定
+                  if (DATA[kinoko.type].score < 0) {
+                      game.replaceScene(startGameScene()); // startEndScene()に変える
+                  } else {
+                      SetEffectPoint(scene, kinoko.x + 16, kinoko.y + 30, 100); //エフェクト設定
+                      scene.removeChild(this); // 画面から消去
+                      game.score += DATA[kinoko.type].score; // スコアを加算
+                  }
+              } else {
+                  this.y += 4; // y座標を増やす (落下)
+                  this.x += this.grad * 4;
+                  if (game.frame % 4 == 0) {
+                      this.scaleX += 0.005;
+                      this.scaleY += 0.005;
+                  }
+              }
+              break;
+          case 36:
+          case 37:
+          case 38:
+              if (game.frame % 4 == 0) {
+                  kinoko.frame += 1;
+              }
+              break;
+      }
   });
   scene.addChild(kinoko);
 }
