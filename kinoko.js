@@ -2,6 +2,9 @@ var KINOKO_SIZE = 32;
 var TEXNAME_DAMAGE = 'img/effect0.png';
 var DAMAGE_SIZE = 16;
 
+var TEXNAME_BENITENGU = 'img/benitengu.jpg';
+var TEXNAME_KAKISHIMEJI = 'img/kakishimeji.jpg';
+
 
 var DATA = [
   {
@@ -11,7 +14,9 @@ var DATA = [
   },
   {
     img: "img/dokukinoko.png",
-    name: "毒キノコ",
+    name: "ベニテングダケ",
+    desc: "下痢、嘔吐、幻覚などの症状を起こす。長野県などでよく見られる。高原のシラカバ・シラビソ・マツなどの林に発生し、時に菌輪をなす。",
+    pic: TEXNAME_BENITENGU,
     score: -1
   },
   {
@@ -21,7 +26,9 @@ var DATA = [
   },
   {
     img: "img/bad_matsutake.png",
-    name: "悪いまつたけ",
+    name: "カキシメジ",
+    desc: "頭痛、嘔吐、下痢、腹痛などの症状を起こす。ブナ、コナラ、クヌギなどの雑木林の地上に群生して発生する。 ",
+    pic: TEXNAME_KAKISHIMEJI,
     score: -1
   },
   {
@@ -63,10 +70,9 @@ function addKinoko(scene) {
                 } else {
                   scene.removeChild(damage);
                   clearInterval(interval);
-                  game.replaceScene(startEndScene());
+                  game.replaceScene(startEndScene(kinoko.type));
                 }
               }, 100);
-              // game.replaceScene(startEndScene());
             } else {
               game.assets[SOUND_GET].play();
               SetEffectPoint(scene, kinoko.x + 16, kinoko.y + 30, DATA[kinoko.type].score); //エフェクト設定
