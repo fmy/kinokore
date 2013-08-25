@@ -7,7 +7,7 @@
 
 /*----- 背景 -----*/
 var BACKGROUND_WIDTH	= 1320;	    // 背景画像の幅
-var BACKGROUND_HEIGHT	= 80;	    // 背景画像の高さ
+var BACKGROUND_HEIGHT	= 160;	    // 背景画像の高さ
 var TEXNAME_BACKGROUND  = 'img/background.png'; // 背景
 
 //=========================================================

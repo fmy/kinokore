@@ -21,11 +21,11 @@ function startGameScene() {
     // 背景の生成	----- 廣山が追加 ----- 
     CreateBackground(scene);
 
-    load = new Sprite(SCREEN_WIDTH, 400);
+    load = new Sprite(SCREEN_WIDTH, SCREEN_HEIGHT - BACKGROUND_HEIGHT);
     load.image = game.assets[TEXNAME_ROAD]; // 画像を指定
     load.frame = 0;
     load.x = 0;
-    load.y = 80;
+    load.y = BACKGROUND_HEIGHT;
 
     // タッチしたときにクマを移動させる
     scene.addEventListener('touchstart', function(e){
@@ -46,6 +46,21 @@ function startGameScene() {
         }
     });
 
+    // ←ボタン
+    scene.addEventListener(Event.LEFT_BUTTON_DOWN, function(e) {
+        if (player.x > PLAYER_SIZE/2) {
+            player.x -= 10;
+            player.scaleX = 1;
+        }
+    });
+
+    // →ボタン
+    scene.addEventListener(Event.RIGHT_BUTTON_DOWN, function(e) {
+        if (player.x < SCREEN_WIDTH - PLAYER_SIZE/2) {
+            player.x += 10;
+            player.scaleX = -1;
+        }
+    });
     game.score = 0;
 
     scene.addEventListener('enterframe',function(){
@@ -61,10 +76,10 @@ function startGameScene() {
             // 6フレームごとにバナナを増やす関数を実行
             addKinoko(scene);
         }
-        if (game.frame % 20 == 0) {
+        if (game.frame % 30 == 0) {
             addTree(scene, true); // 左
         }
-        if (game.frame % 20 == 10) {
+        if (game.frame % 30 == 15) {
             addTree(scene, false); // 右
         }
         if (game.frame % 12 == 0) {
