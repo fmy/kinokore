@@ -4,23 +4,23 @@
 //                By. S.Yamaguchi
 // ===========================================//
 
-var TEXNAME_RESULT = 'result.png';
+var TEXNAME_RESULT = 'img/end.png';
 var RESULT_SIZE_X = 100;
 var RESULT_SIZE_Y = 100;
 
-var TEXNAME_RECIPE_1 = 'recipe1.png' ;
+var TEXNAME_RECIPE_1 = 'img/end.png' ;
 var RECIPE_1_SIZE_X = 100;
 var RECIPE_1_SIZE_Z = 100;
 
 
-var TEXNAME_RECIPIE_2 = 'recipe2.png';
+var TEXNAME_RECIPIE_2 = 'img/end.png';
 var RECIPIE_2_SIZE_X = 100;
 var RECIPIE_2_SIZE_Y = 100;
 
 
-var TEXNAME_FLAME = 'frame.png';
+var TEXNAME_FLAME = 'img/end.png';
 var FLAME_SIZE_X = 100;
-var FLAME_SIZE_Y - 100;
+var FLAME_SIZE_Y = 100;
 
 //死なずに終了した時
 //レシピとか表示します
