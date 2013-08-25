@@ -10,11 +10,11 @@
 
 //定数定義
 var TEXNAME_EFFECTDASH = 'img/dash.png'
-var dash = new Sprite(80, 80);
 
 //エフェクト生成とか更新とか
 function SetEffectDash(scene) {
 
+    var dash = new Sprite(80, 80);
     var nCntFrame = 0;
     dash.x = player.x - 10;
     dash.y = player.y + 5;
@@ -48,7 +48,4 @@ function SetEffectDash(scene) {
     });
 }
 
-function removeEffectDash(scene) {
-    scene.removeChild(dash);
-}
 //End of File...
