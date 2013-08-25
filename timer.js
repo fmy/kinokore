@@ -21,10 +21,12 @@ function CreateTimer(scene) {
     for (var i = 0; i < TIMER_DIGIT; i++) {
 
         timer[i] = new Sprite(16, 16);
-        timer[i].x = 250 + (i * 16);    // Sprite の左上のx座標を指定
+        timer[i].x = 250 + (i * 32);    // Sprite の左上のx座標を指定
         timer[i].y = 10;               // Sprite の左上のy座標を指定
         timer[i].width = 16;
         timer[i].height = 16;
+        timer[i].scaleX = 2.0;
+        timer[i].scaleY = 2.0;
 
         timer[i].image = game.assets[TEXNAME_NUMBER]; // 画像を指定
         timer[i].frame = i;

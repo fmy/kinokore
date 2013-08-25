@@ -1,10 +1,13 @@
 var KINOKO_SIZE = 32;
+var TEXNAME_DAMAGE = 'img/effect0.png';
+var DAMAGE_SIZE = 16;
+
 
 var DATA = [
   {
     img: "img/shiitake.png",
     name: "しいたけ",
-    score: 2
+    score: 200
   },
   {
     img: "img/dokukinoko.png",
@@ -14,7 +17,7 @@ var DATA = [
   {
     img: "img/matsutake.png",
     name: "まつたけ",
-    score: 5
+    score: 500
   },
   {
     img: "img/bad_matsutake.png",
@@ -24,7 +27,7 @@ var DATA = [
   {
     img: "img/enoki.png",
     name: "えのき",
-    score: 1
+    score: 100
   }
 ];
 
@@ -37,14 +40,32 @@ function addKinoko(scene) {
   kinoko.image = game.assets[DATA[kinoko.type].img];
 
   kinoko.frame = 0;
-
   kinoko.addEventListener('enterframe', function(e) {
     switch (kinoko.frame) {
       case 3:
         if (this.within(player, 30)) { // playerとの当たり判定
             if (DATA[kinoko.type].score < 0) {
-              game.replaceScene(startEndScene());
+              var damage = new Sprite(DAMAGE_SIZE, DAMAGE_SIZE);
+              damage.image = game.assets[TEXNAME_DAMAGE];
+              damage.x = player.x + DAMAGE_SIZE;
+              damage.y = player.y + DAMAGE_SIZE;
+              damage.scaleX = 2;
+              damage.scaleY = 2;
+              damage.frame = 0;
+              scene.addChild(damage);
+              scene.removeChild(this);
+              var interval = setInterval(function() {
+                if (damage.frame < 4) {
+                  damage.frame++;
+                } else {
+                  scene.removeChild(damage);
+                  clearInterval(interval);
+                  game.replaceScene(startEndScene());
+                }
+              }, 100);
+              // game.replaceScene(startEndScene());
             } else {
+              SetEffectPoint(scene, kinoko.x + 16, kinoko.y + 30, DATA[kinoko.type].score); //エフェクト設定
               scene.removeChild(this); // 画面から消去
               game.score += DATA[kinoko.type].score; // スコアを加算
             }
@@ -52,8 +73,8 @@ function addKinoko(scene) {
             this.y += 4; // y座標を増やす (落下)
             this.x += this.grad * 4;
             if (game.frame % 4 == 0) {
-              this.scaleX += 0.01;
-              this.scaleY += 0.01;
+              this.scaleX += 0.0125;
+              this.scaleY += 0.0125;
             }
         }
         break;
