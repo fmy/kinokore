@@ -46,6 +46,8 @@ function SetEffectDash(scene) {
             }
         }
     });
+
+    scene.dash = dash;
 }
 
 //End of File...

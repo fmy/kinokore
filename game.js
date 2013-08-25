@@ -70,11 +70,17 @@ function startGameScene() {
             // 20フレームごとにキノコを増やす関数を実行
             addKinoko(scene);
         }
-        if (game.frame % 30 == 0) {
+        if (game.frame % 40 == 10) {
             addTree(scene, true); // 左
         }
-        if (game.frame % 30 == 15) {
+        if (game.frame % 40 == 30) {
             addTree(scene, false); // 右
+        }
+        if (game.frame % 40 == 0) {
+            addGlass(scene, true); // 左
+        }
+        if (game.frame % 40 == 20) {
+            addGlass(scene, false); // 右
         }
 		// 25フレームごとに石を生成　廣山が追加
 		if( game.frame % 25 == 0 ) {
@@ -96,6 +102,6 @@ function startGameScene() {
     });
 
     scene.addChild(player);
-    SetEffectDash(scene);
+    var dash = SetEffectDash(scene);
     return scene;
 }

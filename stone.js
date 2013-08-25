@@ -29,6 +29,14 @@ function AddStone( scene ) {
 	// 石を下に流す
 	stone.addEventListener( 'enterframe', function( e ) {
 
+		if (this.within(player, 30)) { // playerとの当たり判定
+			// 透明にする
+			stone.opacity = 0.0;
+		} else {
+			// 不透明にする
+			stone.opacity = 1.0;
+		}
+
 		this.y += 4; 				// y座標を増やす (落下)
 		this.x += this.grad * 4;	// x座標を増やす（横に移動）
 
