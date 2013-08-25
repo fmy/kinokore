@@ -45,6 +45,7 @@ function addKinoko(scene) {
       case 3:
         if (this.within(player, 30)) { // playerとの当たり判定
             if (DATA[kinoko.type].score < 0) {
+              game.assets[SOUND_END].play();
               var damage = new Sprite(DAMAGE_SIZE, DAMAGE_SIZE);
               damage.image = game.assets[TEXNAME_DAMAGE];
               damage.x = player.x + DAMAGE_SIZE;
@@ -54,6 +55,7 @@ function addKinoko(scene) {
               damage.frame = 0;
               scene.addChild(damage);
               scene.removeChild(this);
+              scene.removeChild(player);
               var interval = setInterval(function() {
                 if (damage.frame < 4) {
                   damage.frame++;
@@ -65,6 +67,7 @@ function addKinoko(scene) {
               }, 100);
               // game.replaceScene(startEndScene());
             } else {
+              game.assets[SOUND_GET].play();
               SetEffectPoint(scene, kinoko.x + 16, kinoko.y + 30, DATA[kinoko.type].score); //エフェクト設定
               scene.removeChild(this); // 画面から消去
               game.score += DATA[kinoko.type].score; // スコアを加算

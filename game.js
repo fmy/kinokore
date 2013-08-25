@@ -45,6 +45,21 @@ function startGameScene() {
         }
     });
 
+    // ←ボタン
+    scene.addEventListener(Event.LEFT_BUTTON_DOWN, function(e) {
+        if (player.x > PLAYER_SIZE/2) {
+            player.x -= 10;
+            player.scaleX = 1;
+        }
+    });
+
+    // →ボタン
+    scene.addEventListener(Event.RIGHT_BUTTON_DOWN, function(e) {
+        if (player.x < SCREEN_WIDTH - PLAYER_SIZE/2) {
+            player.x += 10;
+            player.scaleX = -1;
+        }
+    });
     game.score = 0;
 
     scene.addEventListener('enterframe',function(){
