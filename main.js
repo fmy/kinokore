@@ -14,8 +14,10 @@ var TEXNAME_END         = 'img/end.png';
 window.onload = function() {
     game = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
     game.fps = 24;
+    game.rootScene.backgroundColor = "white";
     game.preload([TEXNAME_PLAYER, TEXNAME_BACKGROUND, TEXNAME_TREE, TEXNAME_ROAD,
-        TEXNAME_NUMBER, TEXNAME_START, TEXNAME_END, TEXNAME_TITLE, TEXNAME_TITLESTRING]);
+        TEXNAME_NUMBER, TEXNAME_START, TEXNAME_END, TEXNAME_TITLE, TEXNAME_TITLESTRING,
+        TEXNAME_DAMAGE]);
     for (var i = 0; i < DATA.length; i++) {
         game.preload(DATA[i].img);
     }

@@ -1,4 +1,7 @@
 var KINOKO_SIZE = 32;
+var TEXNAME_DAMAGE = 'img/effect0.png';
+var DAMAGE_SIZE = 16;
+
 
 var DATA = [
   {
@@ -43,7 +46,25 @@ function addKinoko(scene) {
       case 3:
         if (this.within(player, 30)) { // playerとの当たり判定
             if (DATA[kinoko.type].score < 0) {
-              game.replaceScene(startEndScene());
+              var damage = new Sprite(DAMAGE_SIZE, DAMAGE_SIZE);
+              damage.image = game.assets[TEXNAME_DAMAGE];
+              damage.x = player.x + DAMAGE_SIZE;
+              damage.y = player.y + DAMAGE_SIZE;
+              damage.scaleX = 2;
+              damage.scaleY = 2;
+              damage.frame = 0;
+              scene.addChild(damage);
+              scene.removeChild(this);
+              var interval = setInterval(function() {
+                if (damage.frame < 4) {
+                  damage.frame++;
+                } else {
+                  scene.removeChild(damage);
+                  clearInterval(interval);
+                  game.replaceScene(startEndScene());
+                }
+              }, 100);
+              // game.replaceScene(startEndScene());
             } else {
               scene.removeChild(this); // 画面から消去
               game.score += DATA[kinoko.type].score; // スコアを加算

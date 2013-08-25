@@ -6,6 +6,9 @@
 
 //ゲームが終わったあとの画面とか処理とか
 //！仮実装！//
+
+var TEXNAME_BENITENGU = 'img/benitengu.jpg';
+
 function startEndScene() {
     var scene = new Scene();
     var GameOverImage = new Sprite(189, 97);
