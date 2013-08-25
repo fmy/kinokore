@@ -20,6 +20,11 @@ function startTitleScene() {
     
     var scene = new Scene();
     
+    var bg = new Sprite(SCREEN_WIDTH,SCREEN_HEIGHT);
+    bg.image =   game.assets[TEXNAME_PAPER];
+    bg.x = 0;
+    bg.y = 0;
+
 //メインのタイトル画像定義部分
     var TitleGraph = new Sprite(TITLE_SIZE,TITLE_SIZE);
     TitleGraph.image     =   game.assets[TEXNAME_LOGO];
@@ -36,6 +41,7 @@ function startTitleScene() {
     TitleStringGraph.scaleX = 1.5;
     TitleStringGraph.scaleY = 1.5;
     
+    scene.addChild(bg);
     scene.addChild(TitleGraph);
     scene.addChild(TitleStringGraph);
     
