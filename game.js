@@ -104,6 +104,7 @@ function startGameScene() {
         //デバッグ用−Resultへ飛びます
 	if (game.input.up)
         {
+            clearInterval(scene.keyinterval);
             game.replaceScene(startResultScene());
 	}
     });
