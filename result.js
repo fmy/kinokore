@@ -48,7 +48,7 @@ function startResultScene(score) {
     ResultGraph.width     =   RESULT_SIZE_X;
     ResultGraph.height    =   RESULT_SIZE_Y;
     ResultGraph.x         =   (SCREEN_WIDTH - RESULT_SIZE_X)/2;
-    ResultGraph.y         =   0;
+    ResultGraph.y         =   30;
     ResultGraph.flame     =   0;
     scene.addChild(ResultGraph);
             
@@ -60,16 +60,16 @@ function startResultScene(score) {
    ScoreString.font.bold();
             ScoreString.text = game.score + "茸pt";
             ScoreString.x = (SCREEN_WIDTH - 90)/2;
-            ScoreString.y = 50;
+            ScoreString.y = 80;
             scene.addChild(ScoreString);
 
 //========================
 //キノコ料理画像
 //========================
-var OsusumeString = new Label("あなたにおすめのレシピ");
+var OsusumeString = new Label("あなたにおすすめのレシピ");
 OsusumeString.font = "24px Tahoma";
             OsusumeString.x = (SCREEN_WIDTH - 250)/2;
-            OsusumeString.y = 80;
+            OsusumeString.y = 140;
             scene.addChild(OsusumeString);
     
  //茸判定
@@ -96,14 +96,14 @@ OsusumeString.font = "24px Tahoma";
     RecipeGraph.width     =   RECIPE_1_SIZE_X;
     RecipeGraph.height    =   RECIPE_1_SIZE_Y;
     RecipeGraph.x         =   (SCREEN_WIDTH - RECIPE_1_SIZE_X)/2;
-    RecipeGraph.y         =   150;
+    RecipeGraph.y         =   180;
     RecipeGraph.flame     =   0;
     scene.addChild(RecipeGraph);
     
     var detail = new Label("焼く\n食べる");
             detail.text = recipedis;
             detail.x = 10;
-            detail.y = 360;
+            detail.y = 390;
             scene.addChild(detail);
     
     scene.addEventListener('touchstart', function(e){
