@@ -1,5 +1,4 @@
-﻿var TEXNAME_ROAD  = 'img/road.png'; // 背景
-var TEXNAME_PLAYER      = 'img/player.png';     // プレイヤー
+﻿var TEXNAME_PLAYER      = 'img/player.png';     // プレイヤー
 var PLAYER_SIZE         = 48; // プレイヤー
 
 function startGameScene() {
