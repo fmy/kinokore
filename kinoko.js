@@ -64,6 +64,7 @@ function addKinoko(scene) {
               scene.removeChild(this);
               scene.removeChild(player);
               scene.removeChild(scene.dash); //エフェクト外す
+              clearInterval(scene.keyinterval);
               var interval = setInterval(function() {
                 if (damage.frame < 4) {
                   damage.frame++;

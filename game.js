@@ -23,6 +23,7 @@ function startGameScene() {
 
     // タッチしたときにクマを移動させる
     scene.addEventListener('touchstart', function(e){
+        clearInterval(scene.keyinterval);
         if (e.localX > PLAYER_SIZE/2 && e.localX < SCREEN_WIDTH - PLAYER_SIZE/2) {
             player.x = e.localX - PLAYER_SIZE/2;
         }
@@ -39,21 +40,26 @@ function startGameScene() {
             player.x = e.localX - PLAYER_SIZE/2;
         }
     });
-
     // ←ボタン
     scene.addEventListener(Event.LEFT_BUTTON_DOWN, function(e) {
-        if (player.x > PLAYER_SIZE/2) {
-            player.x -= 10;
-            player.scaleX = 1;
-        }
+        clearInterval(scene.keyinterval);
+        scene.keyinterval = setInterval(function() {
+            if (player.x > 0) {
+                player.x--;
+            }
+        }, 10);
+        player.scaleX = 1;
     });
 
     // →ボタン
     scene.addEventListener(Event.RIGHT_BUTTON_DOWN, function(e) {
-        if (player.x < SCREEN_WIDTH - PLAYER_SIZE/2) {
-            player.x += 10;
-            player.scaleX = -1;
-        }
+        clearInterval(scene.keyinterval);
+        scene.keyinterval = setInterval(function() {
+            if (player.x < SCREEN_WIDTH - PLAYER_SIZE) {
+                player.x++;
+            }
+        }, 10);
+        player.scaleX = -1;
     });
     game.score = 0;
 
@@ -90,6 +96,7 @@ function startGameScene() {
             player.frame++;
         }
         if (scene.age > game.fps * PLAY_TIME) {
+            clearInterval(scene.keyinterval);
             game.replaceScene(startResultScene());
             // 結果を表示 (スコア, 結果のテキストの順で)
         }
