@@ -7,7 +7,7 @@
 var PLAY_TIME           = 30;
 var SCREEN_WIDTH    	= 320;      // 画面の幅
 var SCREEN_HEIGHT   	= 480;      // 画面の高さ
-var TEXNAME_NUMBER      = 'img/number2.png';
+var TEXNAME_NUMBER      = 'img/number3.png';
 var TEXNAME_START       = 'img/start.png';
 var TEXNAME_END         = 'img/end.png';
 
@@ -17,7 +17,7 @@ window.onload = function() {
     game.rootScene.backgroundColor = "white";
     game.preload([TEXNAME_PLAYER, TEXNAME_BACKGROUND, TEXNAME_TREE, TEXNAME_ROAD,
         TEXNAME_NUMBER, TEXNAME_START, TEXNAME_END, TEXNAME_TITLE, TEXNAME_TITLESTRING,
-        TEXNAME_DAMAGE, TEXNAME_BENITENGU]);
+        TEXNAME_DAMAGE, TEXNAME_BENITENGU, TEXNAME_EFFECTDASH]);
     for (var i = 0; i < DATA.length; i++) {
         game.preload(DATA[i].img);
     }
