@@ -10,7 +10,7 @@ var RESULT_SIZE_Y = 100;
 
 var TEXNAME_RECIPE_1 = 'img/end.png' ;
 var RECIPE_1_SIZE_X = 100;
-var RECIPE_1_SIZE_Z = 100;
+var RECIPE_1_SIZE_Y = 100;
 
 
 var TEXNAME_RECIPE_2 = 'img/end.png';
@@ -39,14 +39,49 @@ function startResultScene(score) {
 //    ResultString.y = 150;
 //    ResultString.opacity = 1.0;
 
-var ResultString = new Label("Result");
-            ResultString.x = 100;
-            ResultString.y = 340;
+    var ResultString = new Label("Result");
+            ResultString.x = (SCREEN_WIDTH - 100)/2;
+            ResultString.y = 0;
             scene.addChild(ResultString);
-    
+            
  //========================
  //SCORE の表示
- //========================
+ //========================            
+    var ScoreString = new Label("null");
+            ScoreString.text = game.score + "キノコpt";
+            ScoreString.x = (SCREEN_WIDTH - 100)/2;
+            ScoreString.y = 50;
+            scene.addChild(ScoreString);
+
+//========================
+//キノコ料理画像
+//========================
+var OsusumeString = new Label("あなたにおすめのレシピ");
+            OsusumeString.x = (SCREEN_WIDTH - 100)/2;
+            OsusumeString.y = 100;
+            scene.addChild(OsusumeString);
+            
+    var RecipeString = new Label("レシピA");
+            RecipeString.x = (SCREEN_WIDTH - 100)/2;
+            RecipeString.y = 150;
+            scene.addChild(RecipeString);
+
+            
+    var RecipeGraph = new Sprite(RECIPE_1_SIZE_X,RECIPE_1_SIZE_Y);
+    RecipeGraph.image     =   game.assets[TEXNAME_RECIPE_1];
+    RecipeGraph.width     =   RECIPE_1_SIZE_X;
+    RecipeGraph.height    =   RECIPE_1_SIZE_Y;
+    RecipeGraph.x         =   (SCREEN_WIDTH - RECIPE_1_SIZE_X)/2;
+    RecipeGraph.y         =   200;
+    RecipeGraph.flame     =   0;
+    scene.addChild(RecipeGraph);
+    
+    var detail = new Label("焼く\n食べる");
+            detail.x = 10;
+            detail.y = 360;
+            scene.addChild(detail);
+    
+
     
 
   
