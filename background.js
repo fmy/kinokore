@@ -5,7 +5,9 @@
 //
 //=============================================================================
 
-/*----- 背景 -----*/
+//=========================================================
+//	定数定義
+//=========================================================
 var BACKGROUND_WIDTH	= 1320;	    // 背景画像の幅
 var BACKGROUND_HEIGHT	= 160;	    // 背景画像の高さ
 var TEXNAME_BACKGROUND  = 'img/background.png'; // 背景
@@ -13,7 +15,7 @@ var TEXNAME_BACKGROUND  = 'img/background.png'; // 背景
 //=========================================================
 //	背景生成
 //=========================================================
-function CreateBackground(scene){
+function CreateBackground( scene ) {
 
 	// 背景の生成
 	background = new Sprite(BACKGROUND_WIDTH, BACKGROUND_HEIGHT);
@@ -35,7 +37,7 @@ function CreateBackground(scene){
 	};
 
 	// シーンへの登録
-	scene.addChild(background);
+	scene.addChild( background );
 }
 
 

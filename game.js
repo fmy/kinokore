@@ -18,7 +18,8 @@ function startGameScene() {
     // ゲーム中に frame の値を操作することで、アニメーションを表現できる
 
     // 背景の生成	----- 廣山が追加 ----- 
-    CreateBackground(scene);
+	CreateField( scene );
+    CreateBackground( scene );
 
     load = new Sprite(SCREEN_WIDTH, SCREEN_HEIGHT - BACKGROUND_HEIGHT);
     load.image = game.assets[TEXNAME_ROAD]; // 画像を指定
@@ -75,7 +76,7 @@ function startGameScene() {
         }
     });
 
-    scene.addChild(load);
+    //scene.addChild(load);
     scene.addChild(player);
 
     return scene;
