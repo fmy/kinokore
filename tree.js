@@ -8,7 +8,7 @@
 //=========================================================
 //	定数定義
 //=========================================================
-var TREE_WIDTH		= 32;
+var TREE_WIDTH		= 48;
 var TREE_HEIGHT		= 64;
 var TEXNAME_TREE	= 'img/tree.png';
 
@@ -35,7 +35,7 @@ function addTree(scene, left) {
 
 	tree.addEventListener( 'enterframe', function( e ) {
 		switch( tree.frame ) {
-			case 3:
+			case 7:
 				this.y += 4; 				// y座標を増やす (落下)
 				this.x += this.grad * 4;	// x座標を増やす（横に移動）
 
@@ -49,8 +49,12 @@ function addTree(scene, left) {
 			case 0:
 			case 1:
 			case 2:
+			case 3:
+			case 4:
+			case 5:
+			case 6:
 				// 4フレームに1回フレームを更新
-				if (game.frame % 4 == 0) {
+				if (game.frame % 2 == 0) {
 					tree.frame += 1;
 				}
 				break; 
