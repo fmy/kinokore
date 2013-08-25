@@ -89,6 +89,12 @@ function startGameScene() {
             game.replaceScene(startEndScene());
             // 結果を表示 (スコア, 結果のテキストの順で)
         }
+        
+        //デバッグ用－Resultへ飛びます
+	if (game.input.up)
+        {
+            game.replaceScene(startResultScene());
+	}
     });
 
     scene.addChild(load);
