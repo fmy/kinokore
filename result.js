@@ -30,6 +30,12 @@ var FLAME_SIZE_Y = 100;
 //レシピとか表示します
 function startResultScene(score) {
     var scene = new Scene();
+    var scene = new Scene();
+    var bg = new Sprite(SCREEN_WIDTH,SCREEN_HEIGHT);
+    bg.image =   game.assets[TEXNAME_PAPER];
+    bg.x = 0;
+    bg.y = 0;
+    scene.addChild(bg);
     
 //=====================
 //RESULTの文字画像

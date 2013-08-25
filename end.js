@@ -10,6 +10,12 @@
 
 function startEndScene(type) {
     var scene = new Scene();
+    var bg = new Sprite(SCREEN_WIDTH,SCREEN_HEIGHT);
+    bg.image =   game.assets[TEXNAME_PAPER];
+    bg.x = 0;
+    bg.y = 0;
+    scene.addChild(bg);
+
     var GameOverImage = new Sprite(189, 97);
     GameOverImage.image = game.assets[TEXNAME_END];
     GameOverImage.x = (SCREEN_WIDTH - 189) / 2;

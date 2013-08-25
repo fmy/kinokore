@@ -10,6 +10,7 @@ var SCREEN_HEIGHT   	= 480;      // 画面の高さ
 var TEXNAME_NUMBER      = 'img/number3.png';
 var TEXNAME_START       = 'img/start.png';
 var TEXNAME_END         = 'img/end.png';
+var TEXNAME_PAPER       = 'img/paper.png';
 var SOUND_GET           = 'sound/get.mp3';
 var SOUND_END           = 'sound/gameover.mp3';
 
@@ -22,7 +23,7 @@ window.onload = function() {
         TEXNAME_RESULT, TEXNAME_RECIPE_1, TEXNAME_RECIPE_2,TEXNAME_FLAME,
         TEXNAME_DAMAGE, TEXNAME_BENITENGU, TEXNAME_EFFECTDASH, TEXNAME_LOGO,
         TEXNAME_STONE, TEXNAME_MOUNTAIN, TEXNAME_KAKISHIMEJI, TEXNAME_GLASS,
-        TEXNAME_TIMER, TEXNAME_SCORE]);
+        TEXNAME_TIMER, TEXNAME_SCORE, TEXNAME_PAPER]);
     game.preload([SOUND_GET, SOUND_END]);
     for (var i = 0; i < DATA.length; i++) {
         game.preload(DATA[i].img);
