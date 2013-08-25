@@ -14,7 +14,6 @@ function startGameScene() {
 
     player.image = game.assets[TEXNAME_PLAYER]; // 画像を指定
     player.frame = 0;
-
     // 「chara1.gif」を32x32の格子で切り取ったのち、0番目(=左上)のものを用いる
     // ゲーム中に frame の値を操作することで、アニメーションを表現できる
 
@@ -78,7 +77,7 @@ function startGameScene() {
             addTree(scene, false); // 右
         }
 		if( game.frame % 25 == 0 ) {
-			// AddStone( scene );
+			AddStone( scene );
 		}
         if (game.frame % 12 == 0) {
             player.frame++;
@@ -96,8 +95,6 @@ function startGameScene() {
     });
 
     scene.addChild(player);
-
-    SetEffectDash(scene); //走るエフェクト設定
 
     return scene;
 }

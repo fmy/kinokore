@@ -28,7 +28,7 @@ function AddStone( scene ) {
 
 	// 石を下に流す
 	stone.addEventListener( 'enterframe', function( e ) {
-/*
+
 		this.y += 4; 				// y座標を増やす (落下)
 		this.x += this.grad * 4;	// x座標を増やす（横に移動）
 
@@ -36,7 +36,6 @@ function AddStone( scene ) {
 		if ( game.frame % 4 == 0 ) {
 			this.scaleX += 0.0125;
 			this.scaleY += 0.0125;
-*/
 		}
 	});
 
