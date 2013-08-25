@@ -40,6 +40,21 @@ function startGameScene() {
         }
     });
 
+    // ←ボタン
+    scene.addEventListener(Event.LEFT_BUTTON_DOWN, function(e) {
+        if (player.x > PLAYER_SIZE/2) {
+            player.x -= 10;
+            player.scaleX = 1;
+        }
+    });
+
+    // →ボタン
+    scene.addEventListener(Event.RIGHT_BUTTON_DOWN, function(e) {
+        if (player.x < SCREEN_WIDTH - PLAYER_SIZE/2) {
+            player.x += 10;
+            player.scaleX = -1;
+        }
+    });
     game.score = 0;
 
     scene.addEventListener('enterframe',function(){
@@ -68,6 +83,12 @@ function startGameScene() {
             game.replaceScene(startEndScene());
             // 結果を表示 (スコア, 結果のテキストの順で)
         }
+        
+        //デバッグ用－Resultへ飛びます
+	if (game.input.up)
+        {
+            game.replaceScene(startResultScene());
+	}
     });
 
     scene.addChild(player);
