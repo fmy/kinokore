@@ -13,7 +13,7 @@ var FIELD_HEIGHT	= 320;	   		 	// 画像の高さ
 var TEXNAME_FIELD  	= 'img/road.png';	// テクスチャ
 
 //=========================================================
-//	背景生成
+//	地面生成
 //=========================================================
 function CreateField( scene ) {
 
@@ -25,9 +25,13 @@ function CreateField( scene ) {
 	field.image = game.assets[ TEXNAME_FIELD ]	// テクスチャの指定
 	field.moveTo( 0, 160 );
 
+	// 石の生成処理
+	field.onenterframe = function() {
+		
+	};
+
 	// シーンへの登録
 	scene.addChild( field );
 }
-
 
 /* End of File */
