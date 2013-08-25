@@ -28,6 +28,7 @@ function startTitleScene() {
     TitleGraph.x         =   (SCREEN_WIDTH - TITLE_SIZE)/2;
     TitleGraph.y         =   (SCREEN_WIDTH - TITLE_SIZE)/2;
     TitleGraph.flame     =   0;
+    TitleGraph.rotate(-15);
 
 //押したらスタートするよ的な文字の定義部分
     var TitleStringGraph    = new Sprite(TITLESTRING_SIZE_X,TITLESTRING_SIZE_Y);
