@@ -81,9 +81,10 @@ var OsusumeString = new Label("あなたにおすめのレシピ");
             detail.y = 360;
             scene.addChild(detail);
     
+    scene.addEventListener('touchstart', function(e){
+        
+        game.replaceScene(startTitleScene());
+    });
 
-    
-
-  
     return scene;
 }
