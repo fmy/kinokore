@@ -22,10 +22,12 @@ function CreateScore(scene) {
     for (var i = 0; i < SCORE_DIGIT; i++) {
 
         score[i] = new Sprite(16, 16);
-        score[i].x = 10 + (i * 16);   
+        score[i].x = 10 + (i * 32);   
         score[i].y = 10;             
         score[i].width = 16;
         score[i].height = 16;
+        score[i].scaleX = 2.0;
+        score[i].scaleY = 2.0;
 
         score[i].image = game.assets[TEXNAME_NUMBER]; // 画像を指定
         score[i].frame = i;
