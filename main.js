@@ -17,7 +17,7 @@ window.onload = function() {
     game.rootScene.backgroundColor = "white";
     game.preload([TEXNAME_PLAYER, TEXNAME_BACKGROUND, TEXNAME_TREE, TEXNAME_ROAD,
         TEXNAME_NUMBER, TEXNAME_START, TEXNAME_END, TEXNAME_TITLE, TEXNAME_TITLESTRING,
-        TEXNAME_RESULT, TEXNAME_RECIPE_1, TEXNAME_RECIPIE_2,TEXNAME_FLAME,
+        TEXNAME_RESULT, TEXNAME_RECIPE_1, TEXNAME_RECIPE_2,TEXNAME_FLAME,
         TEXNAME_DAMAGE, TEXNAME_BENITENGU]);
     for (var i = 0; i < DATA.length; i++) {
         game.preload(DATA[i].img);
