@@ -96,6 +96,6 @@ function startGameScene() {
     });
 
     scene.addChild(player);
-
+    SetEffectDash(scene);
     return scene;
 }
