@@ -67,7 +67,7 @@ function startGameScene() {
             CreateScore(scene);
         }
         if(game.frame % 20 == 0){
-            // 6フレームごとにバナナを増やす関数を実行
+            // 20フレームごとにキノコを増やす関数を実行
             addKinoko(scene);
         }
         if (game.frame % 30 == 0) {
@@ -76,6 +76,9 @@ function startGameScene() {
         if (game.frame % 30 == 15) {
             addTree(scene, false); // 右
         }
+		if( game.frame % 25 == 0 ) {
+			// AddStone( scene );
+		}
         if (game.frame % 12 == 0) {
             player.frame++;
         }
